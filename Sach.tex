@@ -440,6 +440,266 @@ int main() {
 }
 \end{lstlisting}
 
+\section{ĐỀ HSG 9 THCS TỈNH ĐIỆN BIÊN NĂM HỌC 2024-2025}
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+\subsection{Bài 1: Tính tiền}
+\textbf{Đề bài:}
+Trong đợt Hội chợ thương mai Điện Biên năm 2024. Để kích cầu một doanh nghiệp đã đưa ra chương trình khuyến mãi. Theo đó, nếu tổng giá trị hóa đơn lớn hơn hoặc bằng 2,000,000 đồng, khách hàng sẽ được giảm giá 15\% trên tổng giá trị hóa đơn. Nếu không đạt điều kiện trên, khách hàng sẽ phải thanh toán toàn bộ giá trị hóa đơn mà không được giảm giá.
+
+\textbf{Yêu cầu:}
+
+Viết chương trình để tính số tiền thực tế khách hàng phải thanh toán dựa trên: Số lượng hàng bán (ký hiệu là $a$), đơn giá của mỗi mặt hàng (ký hiệu là $b$ đồng).
+
+\textbf{Dữ liệu vào:}
+
+Gồm một dòng duy nhất chứa hai số nguyên dương $a$ và $b$ ($1 \leq a \leq 10^4,2 \times 10 \leq b \leq 10^9$) cách nhau bởi dấu cách.
+
+\textbf{Dữ liệu ra:}
+
+Gồm một dòng duy nhất số tiền thực tế khách hàng cần thanh toán.Kết quả đảm bảo là số nguyên.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (80\%): $1 \leq a \leq 100$, $2 \times 10 \leq b \leq 10^6$.
+    \item Subtask 2 (20\%): $10^2 < a \leq 10^4$, $10^6 < b \leq 10^9$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+2 1000000
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1700000
+\end{tcolorbox}
+\textbf{Hướng dẫn giải:}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    long long a, b;
+    cin >> a >> b;
+    long long total = a * b;
+    if (total >= 2000000) {
+        total -= total * 15 / 100; 
+    }
+    cout << total << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 2: Số cùng nhau}
+\textbf{Đề bài:}
+Trong một ngôi làng cổ, các số tự nhiên thường kết đôi để cùng nhau thực hiện những nhiệm vụ đặc biệt. Nhưng không phải cặp số nào cũng có thể đồng hành, chỉ những cặp "tương thích hoàn hảo" mới được chọn. Một cặp số $i$ và $j$ được xem là tương thích hoàn hảo nếu chúng không có bất kỳ ước chung nào khác ngoài số $1$, nghĩa là $\mathrm{UCLN}(i, j) = 1$.
+
+\textbf{Yêu cầu:}
+
+Nhiệm vụ của bạn là giúp trưởng làng đếm xem có bao nhiêu cặp số cùng nhau trong đoạn $[a, b]$ được chọn làm bạn đồng hành lý tưởng.
+
+\textbf{Dữ liệu vào:}
+
+Một dòng duy nhất chứa số nguyên dương $a$ và $b$, cách nhau bởi dấu cách ($1 \leq a < b \leq 10^3$).
+
+\textbf{Dữ liệu ra:}
+
+In ra một số nguyên là số lượng cặp số $(i, j)$ thỏa mãn điều kiện trên.
+
+\textbf{Ràng buộc dữ liệu:}
+
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq a, b \leq 10$.
+    \item Subtask 2 (30\%): $10 < a, b \leq 100$.
+    \item Subtask 3 (30\%): $100 < a, b \leq 1000$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+1 5
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+9
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong đoạn $[1, 5]$, các cặp số cùng nhau là: $(1, 2)$, $(1, 3)$, $(1, 4)$, $(1, 5)$, $(2, 3)$, $(2, 5)$, $(3, 4)$, $(3, 5)$ và $(4, 5)$. Tổng cộng có $9$ cặp.
+
+\textbf{Hướng dẫn giải:}
+
+Sử dụng hàm Euler $\varphi(k)$ để đếm số lượng số nguyên nhỏ hơn $k$ và nguyên tố cùng nhau với $k$.
+
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e6 + 5;
+int phi[N];
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) phi[i] = i;
+    for (int i = 2; i <= n; i++) {
+        if (phi[i] == i) {
+            for (int j = i; j <= n; j += i)
+                phi[j] -= phi[j] / i;
+        }
+    }
+    long long res = 0;
+    for (int i = 2; i <= n; i++) res += phi[i];
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 3: Thu nhập}
+\textbf{Đề bài:}
+Để biết được mức thu nhập trung bình hàng tháng của các hộ dân trong thành phố. Thành phố đã tiến hành khảo sát $N$ hộ dân, hộ dân thứ $i$ có thu nhập $a_i$ triệu đồng. Nhìn vào số liệu thống kê nhận thấy rằng mỗi hộ dân có thu nhập khác nhau, lãnh đạo thành phố muốn biết mức thu nhập thấp nhất và cao nhất cũng như mức thu nhập nào phổ biến trong các hộ dân nhất để thành phố có kế hoạch phát triển kinh tế giàu mạnh.
+
+\textbf{Yêu cầu:}
+Hãy cho biết thu nhập thấp nhất, cao nhất và đếm các hộ dân có thu nhập phổ biến nhất trong thành phố.
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa số nguyên dương $N$ ($1 \leq N \leq 10^5$) là số lượng hộ dân.
+    \item Dòng thứ hai chứa $N$ số nguyên dương $a_i$ ($1 \leq a_i \leq 10^9, i = 1 ... N$) là thu nhập của các hộ dân, cách nhau bởi dấu cách.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm hai dòng:
+
+\begin{itemize}
+    \item Dòng đầu tiên in ra thu nhập thấp nhất và cao nhất, cách nhau bởi dấu cách.
+    \item Dòng thứ hai in ra số nguyên dương là số hộ dân nhiều nhất có mức thu nhập bằng nhau.
+\end{itemize}
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq N \leq 10^2$.
+    \item Subtask 2 (30\%): $10^2 < N \leq 10^3$.
+    \item Subtask 3 (30\%): $10^3 < N \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+9\\
+5 1 5 8 6 2 3 6 3
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1 8\\
+2
+\end{tcolorbox}
+\textbf{Hướng dẫn giải:}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    
+    int min_income = *min_element(a.begin(), a.end());
+    int max_income = *max_element(a.begin(), a.end());
+    
+    unordered_map<int, int> freq;
+    for (int i = 0; i < n; i++) {
+        freq[a[i]]++;
+    }
+    
+    int max_count = 0;
+    for (auto& pair : freq) {
+        max_count = max(max_count, pair.second);
+    }
+    
+    cout << min_income << " " << max_income << endl;
+    cout << max_count << endl;
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 4: Đếm dãy con liên tiếp}
+\textbf{Đề bài:}
+
+Cho dãy số $A$ có $n$ số nguyên $a_1, a_2, \ldots, a_n$. Một dãy con liên tiếp các số hạng của dãy $A$ là dãy các số hạng từ số hạng $a_i$ đến số hạng $a_j$ ($1 \leq i \leq j \leq n$).
+
+\textbf{Yêu cầu:}
+
+Hãy cho biết dãy $A$ có bao nhiêu dãy con liên tiếp mà giá trị tuyệt đối của tổng các số hạng trong dãy con đó lớn hơn một số nguyên dương $S$ cho trước.
+
+\textbf{Dữ liệu vào:}
+
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng thứ nhất chứa hai số nguyên dương $n$ và $S$ ($n \leq 10^5, S \leq 10^{14}$);
+    \item Dòng thứ hai chứa $n$ số nguyên $a_1, a_2, \ldots, a_n$ ($|a_i| \leq 10^9$). Hai số liên tiếp trên cùng dòng được ghi cách nhau bởi dấu cách.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+
+Gồm một số nguyên duy nhất là số dãy con liên tiếp thỏa mãn yêu cầu của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (50\%): $n \leq 100$.
+    \item Subtask 2 (30\%): $n \leq 10^3$.
+    \item Subtask 3 (20\%): $n \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4 4\\
+5 - 1 8 -5
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+6
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Các dãy con liên tiếp có tổng tuyệt đối lớn hơn $4$ là: $$\left\{5 \right\}, \left\{ 8 \right\}, \left\{ -1, 8 \right\}, \left\{ 5, -1, 8 \right\}, \left\{ 5, -1, 8, -5 \right\}$$.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+10 7\\
+-4 9 2 -11 -3 8 -6 5 -3 1
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+12
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+Sử dụng prefix sum và hai con trỏ để đếm số lượng dãy con liên tiếp có tổng tuyệt đối lớn hơn $S$.
+
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main() {
+    int n;
+    ll S;
+    cin >> n >> S;
+    vector<ll> a(n+1, 0), prefix(n+1, 0);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+        prefix[i] = prefix[i-1] + a[i];
+    }
+    ll res = 0;
+    for (int l = 1; l <= n; ++l) {
+        for (int r = l; r <= n; ++r) {
+            ll sum = prefix[r] - prefix[l-1];
+            if (abs(sum) > S) res++;
+        }
+    }
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
 \end{document}
 % \textbf{Đề bài:}
 

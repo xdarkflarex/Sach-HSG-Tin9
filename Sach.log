@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.16)  17 JUL 2025 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.16)  17 JUL 2025 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/C++/HSG THCS 24-25/Sach-HSG-9-2024-2025/Sach.tex"
-(d:/C++/HSG THCS 24-25/Sach-HSG-9-2024-2025/Sach.tex
+**d:/C++/HSG-THCS-24-25/Sach-HSG-9-2024-2025/Sach.tex
+(d:/C++/HSG-THCS-24-25/Sach-HSG-9-2024-2025/Sach.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrartcl.cls
@@ -1044,7 +1044,17 @@ LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <10.95> not available
 [7]
 
 [8]
-runsystem(latexminted cleantemp  --timestamp 20250717093718 F50C12B9E004A66DD2605278784CD175)...disabled (restricted).
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+runsystem(latexminted cleantemp  --timestamp 20250717150833 F50C12B9E004A66DD2605278784CD175)...disabled (restricted).
 
  (Sach.aux)
  ***********
@@ -1053,17 +1063,17 @@ L3 programming layer <2025-07-11>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33133 strings out of 468149
- 681459 string characters out of 5431082
- 1584759 words of memory out of 5000000
- 61138 multiletter control sequences out of 15000+600000
+ 33292 strings out of 468149
+ 683472 string characters out of 5431082
+ 1598759 words of memory out of 5000000
+ 61202 multiletter control sequences out of 15000+600000
  641012 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,107p,10971b,2129s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,12n,107p,10969b,2129s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr17.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnssbx10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on Sach.pdf (8 pages, 204213 bytes).
+Output written on Sach.pdf (13 pages, 245936 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 151 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 246 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
