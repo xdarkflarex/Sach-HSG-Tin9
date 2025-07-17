@@ -1,0 +1,8 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\numberline {1}ĐỀ HSG 9 THCS TỈNH HẢI DƯƠNG NĂM HỌC 2024-2025}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Bài 1: Số tam giác}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Bài 2: Chia phần}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Bài 3: Kiểm tra số chẵn lẻ}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Bài 4: Tích lớn nhất}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Bài 5: Đếm số cặp}{7}{subsection.1.5}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
