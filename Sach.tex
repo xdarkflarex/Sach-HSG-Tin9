@@ -9,6 +9,7 @@
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta, positioning}
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{minted}
@@ -700,7 +701,682 @@ int main() {
     return 0;
 }
 \end{lstlisting}
+
+\section{ĐỀ HSG 9 THCS TỈNH NGHỆ AN NĂM HỌC 2024-2025}
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+\subsection{Bài 1: Số chính phương}
+
+\textbf{Đề bài:}
+
+Trong buổi ôn tập hôm nay, thầy giáo đã chuẩn bị một số món quà để trao tặng cho các bạn trong đội tuyển học sinh giỏi trả lời đúng bài toán về số học của thầy như sau: 
+
+Cho hai số nguyên dương $L, R (1 \leq L \leq R \leq 10^{18})$. Hãy đếm số lượng số chính phương trong đoạn $[L, R]$.
+
+Biết rằng số chính phương là số bằng bình phương của một số nguyên dương. Ví dụ: $1, 4, 9, 16, 25, ...$ là các số chính phương vì chúng là bình phương của các số nguyên dương $1, 2, 3, 4, 5, ...$.
+
+Rất nhanh chóng An đã đưa ra kết quả của bài toán. Em hãy lập trình giải quyết bài toán trên để biết xem An có được nhận phần thưởng của thầy giáo hay không.
+
+\textbf{Yêu cầu:}
+
+Hãy viết chương trình đếm số lượng số chính phương trong đoạn $[L, R]$.
+
+\textbf{Dữ liệu vào:}
+
+Gồm một dòng duy nhất chứa hai số nguyên dương $L, R$. ($1 \leq L \leq R \leq 10^{18}$).
+
+\textbf{Dữ liệu ra:}
+
+Gồm một số nguyên duy nhất là số lượng số chính phương trong đoạn $[L, R]$.
+
+\textbf{Ràng buộc dữ liệu:}
+
+\begin{itemize}
+    \item Subtask 1 (50\%): $1 \leq L, R \leq 10^6$.
+    \item Subtask 2 (50\%): $10^6 < L, R \leq 10^{18}$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4 30
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong đoạn $[4, 30]$ có các số chính phương là: $4, 9, 16, 25$. Tổng cộng có $4$ số chính phương.
+
+\textbf{Hướng dẫn giải:}
+Sử dụng hàm căn bậc hai để tìm số lượng số chính phương trong đoạn $[L, R]$.
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    long long L, R;
+    cin >> L >> R;
+    
+    long long left = ceil(sqrt(L));
+    long long right = floor(sqrt(R));
+    
+    if (left > right) {
+        cout << 0 << endl;
+    } else {
+        cout << right - left + 1 << endl;
+    }
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 2: Cây thông}
+
+\textbf{Đề bài:}
+Chào đón Giáng sinh an lành, một cửa hàng có chương trình quà tặng đặc biệt. Lối vào của cửa hàng được trang trí bởi hai cây thông, cây thứ nhất treo $n$ tấm thẻ ghi các giá trị lần lượt là $A_1, A_2, \ldots, A_n$ và cây thứ hai cũng có $n$ tấm thẻ ghi các giá trị lần lượt là $B_1, B_2, \ldots, B_n$. Người khách nào chọn được cặp thẻ $A_i$ và $B_j (1 \leq i,j \leq n)$ sao cho $|A_i + B_j|$ là giá trị nhỏ nhất thì sẽ được tặng một cây thông mình thích nhất trong cửa hàng. 
+
+\textbf{Yêu cầu:}
+
+Em hãy giúp cửa hàng xác định giá trị nhỏ nhất của $|A_i + B_j|$ để tặng quà cho người khách lựa chọn được cặp thẻ may mắn.
+
+\textbf{Dữ liệu vào:}
+Gồm ba dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa số nguyên dương $n$ ($1 \leq n \leq 10^6$) là số lượng tấm thẻ trên mỗi cây thông.
+    \item Dòng thứ hai chứa $n$ số nguyên $A_1, A_2, \ldots, A_n$ ($-10^9 \leq A_i \leq 10^9$) là giá trị ghi trên các tấm thẻ của cây thông thứ nhất.
+    \item Dòng thứ ba chứa $n$ số nguyên $B_1, B_2, \ldots, B_n$ ($-10^9 \leq B_i \leq 10^9$) là giá trị ghi trên các tấm thẻ của cây thông thứ hai.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm một số nguyên duy nhất là giá trị nhỏ nhất của $|A_i + B_j|$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $1 \leq n \leq 10^3$.
+    \item Subtask 2 (40\%): $10^3 < n \leq 10^6$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+-9 3 -17 -5 3\\
+-1 7 2 3 20
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+2
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, ta có các cặp thẻ $A_i$ và $B_j$ như sau:
+\begin{itemize}
+    \item $A_1 + B_1 = -9 - 1 = -10$.
+    \item $A_1 + B_2 = -9 + 7 = -2$.
+    \item $A_1 + B_3 = -9 + 2 = -7$.
+    \item $A_1 + B_4 = -9 + 3 = -6$.
+    \item $A_1 + B_5 = -9 + 20 = 11$.
+    \item $A_2 + B_1 = 3 - 1 = 2$.
+    \item $A_2 + B_2 = 3 + 7 = 10$.
+    \item $A_2 + B_3 = 3 + 2 = 5$.
+    \item $A_2 + B_4 = 3 + 3 = 6$.
+    \item $A_2 + B_5 = 3 + 20 = 23$.
+    \item $A_3 + B_1 = -17 - 1 = -18$.
+    \item $A_3 + B_2 = -17 + 7 = -10$.
+    \item $A_3 + B_3 = -17 + 2 = -15$.
+    \item $A_3 + B_4 = -17 + 3 = -14$.
+    \item $A_3 + B_5 = -17 + 20 = 3$.
+    \item $A_4 + B_1 = -5 - 1 = -6$.
+    \item $A_4 + B_2 = -5 + 7 = 2$.
+    \item $A_4 + B_3 = -5 + 2 = -3$.
+    \item $A_4 + B_4 = -5 + 3 = -2$.
+    \item $A_4 + B_5 = -5 + 20 = 15$.
+    \item $A_5 + B_1 = 3 - 1 = 2$.
+    \item $A_5 + B_2 = 3 + 7 = 10$.
+    \item $A_5 + B_3 = 3 + 2 = 5$.
+    \item $A_5 + B_4 = 3 + 3 = 6$.
+    \item $A_5 + B_5 = 3 + 20 = 23$.
+\end{itemize}
+Từ các cặp trên, ta thấy rằng giá trị nhỏ nhất của $|A_i + B_j|$ là $2$, với các cặp $(A_2, B_1)$ và $(A_4, B_2)$.
+
+\textbf{Hướng dẫn giải:}
+Sắp xếp hai mảng $A$ và $B$, sau đó sử dụng hai con trỏ để tìm cặp thẻ có tổng gần bằng $0$ nhất.
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<long long> A(n), B(n);
+    
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+    }
+    
+    for (int i = 0; i < n; i++) {
+        cin >> B[i];
+    }
+    
+    sort(A.begin(), A.end());
+    sort(B.begin(), B.end());
+    
+    long long min_sum = LLONG_MAX;
+    int i = 0, j = n - 1;
+    
+    while (i < n && j >= 0) {
+        long long sum = A[i] + B[j];
+        min_sum = min(min_sum, abs(sum));
+        
+        if (sum < 0) {
+            i++;
+        } else {
+            j--;
+        }
+    }
+    
+    cout << min_sum << endl;
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 3: Trồng cây}
+
+\textbf{Đề bài:}
+An là chủ nhiệm của CLB Sống Xanh nơi mình sinh sống. Nhân dịp lễ Giáng sinh và chuẩn bị đón tết Nguyên Đán, CLB phát động chiến dịch "Xanh quê hương"
+với nhiều hoạt động có ý nghĩa nhằm tạo môi trường Xanh - Sạch - Đẹp. Hoạt động đầu tiên trong chiến dịch là thực hiện trồng một hàng cây chạy dọc theo 
+một tuyến đường. 
+
+Trên tuyến đường đã được đánh dấu $n$ vị trí cách đều nhau để trồng cây, trong đó có một số vị trí đã được trồng cây từ trước. CLB gồm An và $k$ thành viên sẽ trồng $k + 1$ 
+cây vào $k + 1$ vị trí trống (mỗi thành viên sẽ trồng một cây). Để thuận tiện quản lí, An muốn tìm một vị trí trồng cây của mình và vị trí của $k$ thành viên, sao cho vị trí thành viên xa nhất đến vị trí của An là ngắn nhất.
+
+\textbf{Yêu cầu:}
+Hãy lập trình giúp An xác định giá trị nhỏ nhất của khoảng cách từ vị trí từ vị trí thành viên xa nhất đến vị trí của An.
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa hai số nguyên dương $n$ và $k$ ($1 \leq k \leq n \leq 10^5$) là số vị trí trồng cây và số thành viên trong CLB.
+    \item Dòng thứ hai chứa một xâu nhị phân $s$ gồm $n$ phần tử biểu diễn trạng thái của $n$ vị trí. Giá trị $0$ biểu diễn vị trí trống, giá trị $1$ biểu diễn vị trí đã trồng cây. (Dữ liệu đảm bảo số phần tử có giá trị $0$ trong xâu $s$ luôn lớn hơn $k$).
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm một số nguyên duy nhất là giá trị nhỏ nhất của khoảng cách từ vị trí thành viên xa nhất đến vị trí của An.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $1 \leq n \leq 10^3$.
+    \item Subtask 2 (40\%): $10^3 < n \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+7 2\\
+1010100
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+2
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+\begin{itemize}
+    \item Cách 1: Chọn các vị trí $2, 4, 6$. An ở vị trí số $4$ và khoảng cách đến thành viên xa nhất là $|6 - 4| = |2 - 4| = 2$.
+    \item Cách 2: Chọn các vị trí $4, 6, 7$. An ở vị trí số $6$ và khoảng cách đến thành viên xa nhất là $|4 - 6| = 2$.
+\end{itemize}
+
+\textbf{Hướng dẫn giải:}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+
+    vector<int> empty_positions;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == '0') {
+            empty_positions.push_back(i);
+        }
+    }
+
+    int left = 0, right = empty_positions.size() - 1;
+    int min_distance = INT_MAX;
+
+    while (right - left + 1 > k) {
+        min_distance = min(min_distance, empty_positions[right] - empty_positions[left]);
+        left++;
+    }
+
+    cout << min_distance << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 4: Giáng sinh}
+\textbf{Đề bài:}
+Giáng sinh là khoảng thời gian đẹp nhất trong năm. Hai anh em William và Jacica là hai diễn viên múa chính
+của đoàn nghệ thuật đỉnh cao số một thế giới. Các vở diễn của họ góp phần hồi sinh các giá trị đạo đức, văn hóa truyền thông, 
+đem lại cho người xem năng lượng tích cực, cảm nhận sâu sắc về các giá trị tốt đẹp và sự bình yên trong tâm hồn. 
+Wiliam và Jacica vừa trở về nhà sau chuyến lưu diễn vòng quanh thế giới và bắt đầu trang trí cây thông Noel của họ bằng những món đồ xinh xắn đã mua trong quá trình lưu diễn.
+
+Họ đã mua $n$ món đồ trang trí cây thông được xếp cạnh nhau trong một hộp dài, món đồ trang trí thứ $i$ có màu $A_i$. 
+Hộp được mở ở cả hai đầu, vì vậy các món đồ có thể được lấy ra từ bên trái hoặc bên phải của hộp. Hộp này trong suốt, nên Wiliam và Jacica có thể nhìn thấy màu sắc của từng món đồ trang trí.
+
+Jacica nghĩ ra một trò chơi để việc trang trí cây thông trở nên thú vị hơn. Trò chơi diễn ra như sau: Wiliam và Jacica thay phiên nhau chơi, Wiliam là người bắt đầu. Người chơi trong lượt của mình sẽ lấy một món đồ trang trí từ hộp (có thể từ bên trái hoặc bên phải) và đặt nó lên cây thông. 
+Nếu món đồ được lấy có màu chưa từng được người nào lấy trước đó, người chơi sẽ ghi được một điểm. Trò chơi kết thúc khi món đồ trang tri cuối cùng được lấy ra khỏi hộp. Người chiến thắng là người ghi được nhiều điểm hơn. Vì cả Wiliam và Jacica đều là những người chơi xuất sắc, họ sẽ chơi một cách tối ưu.
+
+\textbf{Yêu cầu:}
+Em hãy đưa ra kết quả cuối cùng của trò chơi. 
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa số nguyên dương $n$ ($1 \leq n \leq 3000$) là số lượng món đồ trang trí trong hộp.
+    \item Dòng thứ hai chứa $n$ số nguyên dương $A_1, A_2, ..., A_n$ với $A_i$ ($1 \leq A_i \leq n$) là màu sắc của các món đồ trang trí, cách nhau bởi dấu cách.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm một dòng duy nhất gồm hai số, được nối bằng một ký tự ":" (Dấu hai chấm), lần lượt là điểm số của Wiliam và Jacica.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (25\%): $1 \leq A_i \leq 2$ với mọi $\forall i = 1, 2, ..., n$.
+    \item Subtask 2 (20\%): $1 \leq n \leq 20$.
+    \item Subtask 3 (10\%): $1 \leq A_i \leq 20$ với mọi $\forall i = 1, 2, ..., n$.
+    \item Subtask 4 (20\%): $1 \leq n \leq 300$.
+    \item Subtask 5 (25\%): $300 < n \leq 3000$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+1 1 2 1 1
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1:1
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ này, Wiliam và Jacica sẽ chơi như sau:
+\begin{itemize}
+    \item Đầu tiên Wiliam chọn món đồ trang trí có màu $1$ từ bên trái, ghi được $1$ điểm.
+    \item Tiếp theo Jacica chọn món đồ trang trí có màu $1$ từ bên phải và không có điểm vì màu này đã được Wiliam lấy.
+    \item Tiếp theo Wiliam chọn màu 1 ở bên trái và không có điểm vì màu $1$ đã được lấy. 
+    \item Tiếp theo Jacica chọn màu $2$ ở vế bên trái và được $1$ điểm vì màu $2$ chưa được lấy.
+    \item Cuối cùng Wiliam chọn màu $1$ và không được điểm vì màu $1$ đã được lấy.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[
+    state/.style={circle, fill=black, minimum size=1.2cm, inner sep=0pt},
+    num/.style={text=white, font=\bfseries\large},
+    arr/.style={-{Latex[length=3mm]}, thick},
+    yscale=1.5
+]
+
+% ---------------------
+% Row 1 (y = 0)
+\foreach \val/\name/\x in {1/A/0, 2/B/1.5, 1/C/3, 1/D/4.5, 1/E/6} {
+    \node[state] (r1\name) at (\x, 0) {};
+    \node[num] at (r1\name.center) {\val};
+}
+\draw[arr] (r1A.west) -- ++(-0.8, 0); % arrow from left
+
+% ---------------------
+% Row 2 (y = -1.5)
+\foreach \val/\name/\x in {1/A/0, 2/B/1.5, 1/C/3, 1/D/4.5, 1/E/6} {
+    \node[state] (r2\name) at (\x, -1.5) {};
+    \node[num] at (r2\name.center) {\val};
+}
+\draw[arr] (r2E.east) -- ++(0.8, 0); % arrow to right
+
+% ---------------------
+% Row 3 (y = -3)
+\foreach \val/\name/\x in {1/A/1.5, 2/B/3, 1/C/4.5} {
+    \node[state] (r3\name) at (\x, -3) {};
+    \node[num] at (r3\name.center) {\val};
+}
+\draw[arr] (r3A.west) -- ++(-1.5, 0); % long arrow from left
+
+% ---------------------
+% Row 4 (y = -4.5)
+\foreach \val/\name/\x in {2/A/3, 1/B/4.5} {
+    \node[state] (r4\name) at (\x, -4.5) {};
+    \node[num] at (r4\name.center) {\val};
+}
+\draw[arr] (r4A.west) -- ++(-3, 0); % longer arrow
+
+% ---------------------
+% Row 5 (y = -6)
+\node[state] (r5A) at (4.5, -6) {};
+\node[num] at (r5A.center) {1};
+\draw[arr] (r5A.west) -- ++(-4.5, 0); % longest arrow
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{Hướng dẫn giải:}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> A(n);
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+    }
+
+    vector<vector<int>> dp(n, vector<int>(n, 0));
+    
+    for (int len = 1; len <= n; len++) {
+        for (int l = 0; l + len - 1 < n; l++) {
+            int r = l + len - 1;
+            if (l == r) {
+                dp[l][r] = 1; // only one item
+            } else {
+                int left = A[l], right = A[r];
+                if (left != right) {
+                    dp[l][r] = max(dp[l + 1][r] + (A[l] != A[l + 1]), dp[l][r - 1] + (A[r] != A[r - 1]));
+                } else {
+                    dp[l][r] = max(dp[l + 1][r], dp[l][r - 1]);
+                }
+            }
+        }
+    }
+
+    int william_score = (n + dp[0][n - 1]) / 2;
+    int jacica_score = n - william_score;
+
+    cout << william_score << ":" << jacica_score << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\section{ĐỀ HSG 9 THCS TỈNH THANH HÓA NĂM HỌC 2024-2025}
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+\subsection{Bài 1: Diện tích}
+\textbf{Đề bài:}
+Biết Nam đang ôn tập để tham gia kỳ thi học sinh giỏi cấp tỉnh môn Tin học. Bố đã đố bạn ấy lập trình để giải bài toán có nội dung như sau:
+
+Cho $4$ thanh sắt có độ dài lần lượt là $a$, $b$, $c$, $d$. Bố muốn Nam tạo một khung hình chữ nhật từ $4$ thanh sắt đó (phải sử dụng cả 4 thanh), những đoạn dư của các thanh sắt 
+(nếu có) sẽ được cắt bỏ. Hãy tìm diện tích lớn nhất của khung sắt được tạo thành.
+
+\textbf{Yêu cầu:}
+Em hãy giúp bạn Nam giải bài toán trên.
+
+\textbf{Dữ liệu vào:}
+Gồm một dòng duy nhất chứa 4 số nguyên dương $a, b, c, d$ ($0 < a, b, c, d \leq 10^5$).
+
+\textbf{Dữ liệu ra:}
+Gồm một số nguyên duy nhất là diện tích lớn nhất của khung hình chữ nhật được tạo thành từ 4 thanh sắt.
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+7 3 4 6
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+18
+\end{tcolorbox}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5 5 5 5
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+25
+\end{tcolorbox}
+\textbf{Hướng dẫn giải:}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+
+    int max_area = 0;
+    for (int w = 1; w <= 100000; w++) {
+        int h = min({a / w, b / w, c / w, d / w});
+        max_area = max(max_area, w * h);
+    }
+
+    cout << max_area << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 2: Số lớn}
+\textbf{Đề bài:}
+Việt và Nam cùng nhau ôn luyện chủ đề xâu kí tự. Để buổi học trở nên thú vị hơn, mỗi bạn sẽ lần lượt đưa ra một bài toán 
+dành cho bạn của mình. Bài toán của Việt dành cho Nam như sau: Cho một xâu $ST$ bao gồm các kí tự chữ cái tiếng Anh (thường và hoa) và 
+các kí tự số. Hãy thực hiện xóa đi các kí tự trong xâu $ST$ để được một xâu mới $ST1$ chỉ còn $K$ kí tự đều là kí tự số và khi giữ nguyên trật tự ban đầu 
+thì xâu $ST1$ là xâu số lớn nhất có thể.
+
+\textbf{Yêu cầu:}
+Em hãy giúp Nam tìm ra xâu $ST1$ theo đúng yêu cầu của bài toán.
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa một xâu $ST$ ($1 \leq |ST| \leq 10^5$) là xâu kí tự cần xử lý.
+    \item Dòng thứ hai chứa một số nguyên dương $K$ ($1 \leq K \leq |ST|$). Biết rằng trong xâu $ST$ luông đảm bảo có ít nhất $K$ kí tự là số. 
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm một dòng duy nhất là xâu $ST1$ theo đúng yêu cầu của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $|ST| \leq 18$, xâu $ST$ chỉ gồm các kí tự số.
+    \item Subtask 2 (60\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+AmN69pQ3e6\\
+2
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+96
+\end{tcolorbox}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+Fish36colo99\\
+3
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+699
+\end{tcolorbox}
+\textbf{Hướng dẫn giải:}
+Để giải bài toán này, ta cần thực hiện các bước sau:
+\begin{itemize}
+    \item Đầu tiên, ta sẽ duyệt qua xâu $ST$ và lưu trữ tất cả các kí tự số vào một danh sách.
+    \item Sau đó, ta sẽ sắp xếp danh sách các kí tự số theo thứ tự giảm dần.
+    \item Cuối cùng, ta sẽ lấy $K$ kí tự đầu tiên trong danh sách đã sắp xếp để tạo thành xâu $ST1$.
+\end{itemize}
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string ST;
+    int K;
+    cin >> ST >> K;
+
+    vector<char> digits;
+    for (char c : ST) {
+        if (isdigit(c)) {
+            digits.push_back(c);
+        }
+    }
+
+    sort(digits.rbegin(), digits.rend()); 
+
+    string ST1 = "";
+    for (int i = 0; i < K; i++) {
+        ST1 += digits[i];
+    }
+
+    cout << ST1 << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 3: Hộp số}
+\textbf{Đề bài:}
+Có $n$ chiếc hộp được đánh số theo thứ tự từ $1$ đến $n$ và xếp chúng theo một hàng ngang. Mỗi chiếc hộp 
+có một trong hai giá trị $0$ hoặc $1$. Thực hiện một lần thay đổi giá trị của tất cả các hộp từ vị trí $i, j (1 \leq i \leq j \leq n)$ theo quy 
+tắc "Những hộp có giá trị bằng $1$ sẽ được thay đổi bằng $0$ và ngược lại", để sau khi theo đổi thì trong $n$ chiếc hộp nhận được số chiếc hộp có giá trị bằng $1$ là nhiều nhất.
+
+\textbf{Yêu cầu:}
+Đếm ố hộp cóa giá trị bằng $1$ nhiều nhất sau khi thay đổi như trên.
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đầu tiên chứa một số nguyên dương $n$ ($0 < n \leq 10^6$) là số lượng hộp.
+    \item Dòng thứ hai chứa $n$ số nguyên $a_1, a_2, \ldots, a_n$ ($a_i \in \{0, 1\}$) là giá trị của các hộp.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm một số nguyên duy nhất là số lượng hộp có giá trị bằng $1$ nhiều nhất sau khi thay đổi.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): $1 \leq n \leq 500$.
+    \item Subtask 2 (30\%): $500 < n \leq 8000$.
+    \item Subtask 3 (40\%): $8000 < n \leq 10^6$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8\\
+1 0 0 1 1 0 0 0
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+6
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+Để giải bài toán này, ta có thể sử dụng thuật toán quét hai đầu (two-pointer) hoặc thuật toán tiền tố (prefix sum) để tìm đoạn con có số lượng hộp có giá trị bằng $1$ nhiều nhất sau khi thay đổi.
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int max_ones = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            int count = 0;
+            for (int k = i; k <= j; k++) {
+                count += (a[k] == 1) ? 0 : 1;
+            }
+            max_ones = max(max_ones, count);
+        }
+    }
+
+    cout << max_ones << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Bài 4: Bội số chung nhỏ nhất}
+
+\textbf{Đề bài:}
+Bội số chung nhỏ nhất của hai số nguyên $x$ và $y$ là số nguyên dương nhỏ nhất chia hết cho cả $x$ và $y$, ký hiệu là $LCM(x, y)$.
+
+Cho hai số nguyên dương $a$ và $b$ ($a \leq b$).
+
+\textbf{Yêu cầu:}
+Hãy đếm số cặp số nguyên dương $x, y$ sao cho $LCM(x, y)$ bằng tích các số nguyên liên tiếp từ $a$ đến $b$ (trường hợp $a$ bằng $b$ thì tích này bằng $a$).
+
+\textbf{Dữ liệu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng đàu ghi số nguyên dương $T$ ($T \leq 10$) là số lượng bộ test.
+    \item $T$ dòng tiếp theo, mỗi dòng chứa hai số nguyên dương $a, b$ ($1 \leq a \leq b \leq 10^6$) là đầu và cuối của đoạn cần xét.
+\end{itemize}
+
+\textbf{Dữ liệu ra:}
+Gồm $T$ dòng, mỗi dòng chứa một số nguyên duy nhất là số lượng cặp số tìm được khi chia hết cho $10^9 + 7$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq a, b \leq 10$.
+    \item Subtask 2 (30\%): $1 \leq a, b \leq 100$.
+    \item Subtask 3 (30\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+2\\
+3 4\\
+7 7\\
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+15\\
+3
+\end{tcolorbox}
+\textbf{Giải thích:}
+Trong ví dụ trên, ta có hai bộ test:
+\begin{itemize}
+    \item Bộ test đầu tiên: Tích các số nguyên liên tiếp từ $3$ đến $4$ là $3 \times 4 = 12$. Các cặp $(x, y)$ sao cho $LCM(x, y) = 12$ là: $(1, 12)$, $(2, 6)$, $(3, 4)$, $(4, 3)$, $(6, 2)$, $(12, 1)$, $(2, 12)$, $(3, 12)$, $(4, 12)$, $(6, 12)$ và các hoán vị của chúng. Tổng cộng có $15$ cặp.
+    \item Bộ test thứ hai: Tích các số nguyên liên tiếp từ $7$ đến $7$ là $7$. Các cặp $(x, y)$ sao cho $LCM(x, y) = 7$ là: $(1, 7); (7, 1); (7, 7)$. Tổng cộng có $3$ cặp.
+\end{itemize}
+\textbf{Hướng dẫn giải:}
+Để giải bài toán này, ta cần tính tích các số nguyên liên tiếp từ $a$ đến $b$ và sau đó đếm số cặp $(x, y)$ sao cho $LCM(x, y)$ bằng tích đó. Ta có thể sử dụng công thức:
+\[LCM(x, y) = \frac{x \times y}{GCD(x, y)}\]
+Trong đó $GCD(x, y)$ là ước số chung lớn nhất của $x$ và $y$.
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int a, b;
+        cin >> a >> b;
+        long long product = 1;
+        for (int i = a; i <= b; i++) {
+            product *= i;
+        }
+        int count = 0;
+        for (int x = 1; x <= product; x++) {
+            for (int y = 1; y <= product; y++) {
+                if (lcm(x, y) == product) {
+                    count++;
+                }
+            }
+        }
+        cout << count % (1000000007) << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
 \end{document}
+
+
 % \textbf{Đề bài:}
 
 % \textbf{Yêu cầu:}
