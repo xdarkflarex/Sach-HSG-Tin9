@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.16)  21 JUL 2025 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.16)  23 JUL 2025 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -917,7 +917,7 @@ File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count361
 ) (Sach.aux
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
-(babel)             Reported  on input line 11.
+(babel)             Reported  on input line 10.
 )
 \openout1 = `Sach.aux'.
 
@@ -1021,16 +1021,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
-)
-\tf@toc=\write5
-\openout5 = `Sach.toc'.
-
 
 
 [1
 
 
-{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
+\tf@toc=\write5
+\openout5 = `Sach.toc'.
+
+
 
 [2]
 LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 159.
@@ -1084,16 +1084,64 @@ LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <10.95> not available
 [23]
 
 [24]
+
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 
  []
 
 
 
-[25]
-
 [26]
-runsystem(latexminted cleantemp  --timestamp 20250721105622 F50C12B9E004A66DD2605278784CD175)...disabled (restricted).
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 1719.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1719.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1719.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1719.
+
+
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+
+[43]
+runsystem(latexminted cleantemp  --timestamp 20250723174706 F50C12B9E004A66DD2605278784CD175)...disabled (restricted).
 
  (Sach.aux)
  ***********
@@ -1102,17 +1150,17 @@ L3 programming layer <2025-07-11>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34135 strings out of 468149
- 700214 string characters out of 5431082
- 1603008 words of memory out of 5000000
- 61799 multiletter control sequences out of 15000+600000
- 642616 words of font info for 68 fonts, out of 8000000 for 9000
+ 34391 strings out of 468149
+ 703834 string characters out of 5431082
+ 1684008 words of memory out of 5000000
+ 61908 multiletter control sequences out of 15000+600000
+ 643529 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,107p,10969b,2031s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnitt10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr17.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnssbx10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on Sach.pdf (26 pages, 346801 bytes).
+ 108i,12n,107p,10969b,2029s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnitt10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr17.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnssbx10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vntt10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on Sach.pdf (43 pages, 441457 bytes).
 PDF statistics:
- 833 PDF objects out of 1000 (max. 8388607)
- 483 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1128 PDF objects out of 1200 (max. 8388607)
+ 630 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 
