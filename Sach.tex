@@ -1375,7 +1375,9 @@ int main() {
 \end{lstlisting}
 
 \section{ĐỀ HSG 10 THCS TỈNH THÁI BÌNH NĂM HỌC 2024-2025}
+
 \textbf{Thời gian làm bài: 150 phút}
+
 \textbf{Độ khó: }
 \subsection{Bài 1: Số đặc biệt}
 \textbf{Đề bài:}
@@ -1716,6 +1718,9 @@ int main() {
 
 \section{ĐỀ HSG 9 THCS TỈNH HÀ TĨNH 2024 - 2025}
 
+\textbf{Thời gian làm bài: 150 phút}
+
+\textbf{Độ khó: }
 \subsection{Bài 1: Số nguyên dương $k$}
 
 \textbf{Đề bài:}
@@ -2212,6 +2217,379 @@ Không cần thực hiện thao tác nào.
 \textbf{Hướng dẫn giải:}
 
 \textbf{Solution C++:}
+
+\section{ĐỀ HSG 9 THCS TỈNH HẢI PHÒNG 2024 - 2025}
+
+\textbf{Thời gian làm bài: 150 phút}
+
+\textbf{Độ khó: }
+
+\subsection{Bài 1: Tam giác vuông}
+
+\textbf{Đề bài:}
+
+Cho một số nguyên dương $A$.
+
+\textbf{Yêu cầu:}
+
+Viết chương trình kiểm tra xem $A$ có phải là diện tích của một tam giác vuông có các cạnh là số nguyên hay không. 
+Nếu có in ra \texttt{YES}, nếu không in ra \texttt{NO}.
+
+\textbf{Dữ liệu đầu vào:}
+
+Gồm $T + 1$ dòng:
+\begin{itemize}
+    \item Dòng đầu chứa số nguyên $T (T \leq 1000)$ là số lượng số $A$ cần kiểm tra. 
+    \item $T$ dòng tiếp theo, mỗi dòng ghi một số $A (A \leq 10^6)$.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+
+Gồm $T$ dòng, mỗi dòng là một chữ \texttt{YES} hoặc \texttt{NO} tương ứng với dữ liệu đề bài.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (20\%): $T = 2, A \leq 100$.
+    \item Subtask 2 (30\%): $2 < T \leq 100, A \leq 100$.
+    \item Subtask 3 (50\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3\\
+6\\
+24\\
+50
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+YES\\
+YES\\
+NO
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+\begin{itemize}
+    \item Với $A = 6$ tam giác vuông thỏa mãn yêu cầu có các cạnh lần lượt là: $3;4;5$
+    \item Với $A = 24$ tam giác vuông thỏa mãn yêu cầu đề bài có các cạnh lần lượt là: $6;8;10$.
+    \item Với $A = 50$ không có tam giác vuông nào thỏa mãn yêu cầu đề bài.
+\end{itemize}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Số chính phương}
+
+\textbf{Đề bài:}
+
+Cho một xâu $S$ chỉ gồm các ký tự chữ cái trong bảng chữ cái tiếng Anh và các chữ số từ \texttt{0} đến \texttt{9}. 
+Một số trong xâu $S$ được định nghĩa là một ký tự chữ số hoặc là các kí tự số liên tiếp và không bao gồm các chữ số \texttt{0} không có nghĩa.
+
+Ví dụ với xâu $S = $ \texttt{05aAb21b3956cDe488a}, các số có trong xâu là: $5; 21; 3956; 488$.
+
+\textbf{Yêu cầu:}
+
+Cho xâu $S$ chỉ gồm các ký tự chữ cái tiếng Anh và các chữ số. Hãy viết chương trình tìm số chính phương lớn nhất trong xâu $S$. (Số chính phương là số bằng bình phương của một số nguyên, ví dụ $9$ là số chính phương vì $9 = 3^2$).
+
+
+\textbf{Dữ liệu đầu vào:}
+
+Gồm xâu $S$ chỉ chứa các ký tự chữ cái trong bảng chữ cái tiếng Anh và chữ số (dữ liệu đảm bảo $S$ có không quá $18$ chữ số có nghĩa liền nhau và độ dài xâu không quá $10^5$ ký tự). 
+
+\textbf{Dữ liệu đầu ra:}
+
+Gồm số chính phương lớn nhất tìm được hoặc số $-1$ nếu không tìm được số chính phương nào.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): $|S| \leq 250$.
+    \item Subtask 2 (30\%): $|S| \leq 10^3$.
+    \item Subtask 3 (40\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+aBc2144gHf81Dgf09gf
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+81
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+
+Trong xâu có các số: $2144; 81; 9$. Số chính phương lớn nhất là $81$.
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+dGaf21eac056Ude00132aV
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+-1
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong xâu có các số: $21; 56; 132$. Không có số chính phương nào.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Mượn sách}
+\textbf{Đề bài:}
+Bạn An có một bộ sách hay và muốn chia sẻ chúng với các bạn trong câu lạc bộ đọc sách 
+của trường. Có $N$ yêu cầu được mượn sách này từ các bạn trong câu lạc bộ, yêu cầu thứ $i (1 \le i \le N)$ cho biết thời điểm 
+mượn sách là $a_i$ và thời điểm trả sách là $b_i$. Bạn An có thể chấp nhận hoặc từ chối đối với một yêu cầu. 
+
+\textbf{Yêu cầu:}
+Hãy lập trình giúp bạn An chọn các yêu cầu mượn sách của các bạn sao cho đáp ứng được nhiều yêu cầu nhất. Đảm bảo khoảng thời gian sử dụng của hai yêu cầu không giao nhau.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng đầu tiên chứa số nguyên dương $N (1 \leq N \leq 10^4)$ là số lượng yêu cầu mượn sách.
+    \item $N$ dòng tiếp theo, dòng thứ $i (1 \leq i \leq N)$ chứa hai số nguyên dương $a_i, b_i (1 \leq a_i < b_i \leq 32000) (1 \leq i \leq N)$. 
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên $K$ là số các yêu cầu được chấp nhận. 
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): $N \leq 100; a_i < b_i \le 10^3$.
+    \item Subtask 2 (30\%): $100 < N \leq 10^3; a_i < b_i \leq 10^3$.
+    \item Subtask 3 (40\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+7 9\\
+2 4\\
+1 3\\
+1 6\\
+4 7
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Các yêu cầu được chấp thuận là $(1, 3), (4, 7), (7, 9)$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Số đặc biệt}
+
+\textbf{Đề bài:}
+Số $X$ được gọi là số đặc biệt nếu tất cả các chữ số của $X$ đều thuộc tập hợp $\{1; 3; 5; 7; 9\}$. Người ta tạo ra các số đặc biệt, sau đó sắp xếp chúng theo thứ thự tăng dần để được một dãy số $A$. 
+Ví dụ $20$ số đặc biệt đầu tiên:
+$$1; 3; 5; 7; 9; 11; 13; 15; 17; 19; 31; 33; 35; 37; 39; 51; 53; 55; 57; 59.$$
+
+\textbf{Yêu cầu:}:
+Cho số nguyên dương $N$, hãy tìm số đặc biệt thứ $N$ trong dãy số $A$.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm một dòng duy nhất chứa số nguyên dương $N (1 \leq N \leq 10^{18})$. 
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng duy nhất chứa số đặc biệt thứ $N$ trong dãy số $A$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (50\%): $N \leq 10^6$.
+    \item Subtask 2 (30\%): $10^6 < N \leq 10^9$.
+    \item Subtask 3 (20\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+15
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Số đặc biệt thứ $8$ trong dãy số $A$ là $15$.
+
+\textbf{Ví dụ 2:}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+29
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+97
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Số đặc biệt thứ $29$ trong dãy số $A$ là $97$.
+
+\section{ĐỀ HSG 9 THCS TP. HỒ CHÍ MINH 2024 - 2025}
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+
+\subsection{Bài 1: Sắp xếp}
+\textbf{Đề bài:}
+Sắp xếp nổi bọt (Bubble Sort) là một trong những thuật toán đơn giản và dễ hiểu. Thuật toán sắp xếp nổi bọt 
+thực hiện sắp xếp dãy phần tử bằng cách liên tục lặp lại việc so sánh hai phần tử liền kề và hoán đổi vị trí của chúng
+nếu chúng không theo thứ tự mong muốn. Quá trình này được lặp lại cho đến khi toàn bộ dãy được sắp xếp hoàn chỉnh.
+
+\textbf{Yêu cầu:}
+Cho một dãy gồm $n$ phần tử hãy viết chương trình đếm số lần hoán đổi vị trí các phần tử theo thuật toán sắp xếp nổi bọt để sắp xếp dãy tăng dần. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Số nguyên dương $n (1 \leq n \leq 2 \times 10^5)$ là số phần tử trong dãy.
+    \item Dòng 2: $n$ số nguyên $a_1, a_2, ..., a_n (1 \leq a_i \leq 10^9, \forall i = 1 ... n)$ là các phần tử trong dãy.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một số nguyên là số lần hoán đổi vị trí các phần tử theo thuật toán sắp xếp nổi bọt để sắp xếp dãy tăng dần.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (80\%): $1 \leq n \leq 1000$.
+    \item Subtask 2 (20\%): $1 \leq n \leq 2 \times 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4\\
+3 2 1 4
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Theo thuật toán sắp xếp nổi bọt có $3$ lần hoán đổi vị trí các phần tử gồm: 
+\begin{itemize}
+    \item Lần 1: Hoán đổi $3$ và $2$ được dãy $\left[2, 3, 1, 4\right]$.
+    \item Lần 2: Hoán đổi $3$ và $1$ được dãy $\left[2, 1, 3, 4\right]$.
+    \item Lần 3: Hoán đổi $2$ và $1$ được dãy $\left[1, 2, 3, 4\right]$.
+\end{itemize}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Khu vực}
+\textbf{Đề bài:}
+Vùng đất thần tiên AlphaLand rộng lớn được chia thành nhiều khu vực khác nhau. Các khu vực được đánh số $1, 2, 3, ...$ 
+
+Việc phân chia khu vực sinh sống, lao động, vui chơi cho người dân cũng khá kì lạ. Mỗi người dân được cấp một cái thẻ chứa một con số và họ chỉ được phép ra vào khu vực có số thứ tự là ước số của số thẻ. Các số trên thẻ của người dân được phép trùng nhau.
+
+Mỗi dịp lễ hội thường niên, trưởng lão sẽ tập trung tất cả người dân về một khu vực để tổ chức tiệc mừng. Năm nay, ông quyết định mở tiệc tại khu vực mà tất cả người dân được phép ra vào khu vực đó có số thứ tự lớn nhất. 
+
+Nhận thấy rằng có một số thẻ đã cấp cho người dân làm ảnh hưởng đến việc chọn khu vực như trên, ông quyết định đổi cho một trong những số họ cái thẻ mới để chọn được khu vực tổ chức tiệc có số thứ tự lớn hơn.
+
+\textbf{Yêu cầu:} Cho danh sách $n$ thẻ với các số tương ứng. Hãy viết chương trình tìm khu vực mà tất cả người dân được phép ra vào và khu vực đó có số thứ tự lớn nhất. Lưu ý, việc xác định khu vực được thực hiện sau khi người dân được đổi thẻ. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Số nguyên dương $n (1 \leq n \leq 10^5)$ là số thẻ.
+    \item Dòng 2: $n$ số nguyên dương $a_1, a_2, ..., a_n (1 \leq a_i \leq 10^9, \forall i = 1 ... n)$ là các số trên thẻ.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một số nguyên là số thứ tự khu vực mà tất cả người dân được phép ra vào và khu vực đó có số thứ tự lớn nhất.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq n \leq 100; 1 \leq a_i \leq 100, \forall i$.
+    \item Subtask 2 (40\%): $1 < n \leq 1000$.
+    \item Subtask 3 (20\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3\\
+4 2 8
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+
+Thẻ số $4$ đến được các khu vực $1, 2, 4$.
+
+Thẻ số $2$ đến được các khu vực $1, 2$.
+
+Thẻ số $8$ đến được các khu vực $1, 2, 4, 8$.
+
+Ban đầu khu vực dự kiến chọn là $2$. Có thể đổi thẻ số $2$ thành số $4$ với các thẻ $4, 4, 8$ để chọn khu vực $4$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Giải đấu}
+\textbf{Đề bài:}
+Trong mùa hè năm nay, công ty game AlphaNet sẽ tổ chức giải đấu trực tuyến cho tất cả game thủ của mình. Danh sách tên các game thủ được đánh số thứ tự từ $1$ đến $n$. 
+Mỗi game thủ có một ranking (thứ hạng trong game) khác nhau. Trước khi bắt đầu giải, ban tổ chức sẽ cho các game thủ giao lưu với nhau thông qua $q$ lượt đấu đồng đội bằng cách ghép đôi ngẫu nhiên ở mỗi lượt đấu, ban tổ chức thực hiện ghép đôi ngẫu nhiên như sau:
+
+\begin{itemize}
+    \item Cho hệ thống sinh ngẫu nhiên hai số $u, v (u < v)$ để xác định nhóm các thành viên được chọn tham gia là các game thủ trong danh sách có số thứ tự từ $u$ đến $v$.
+    \item Tiếp theo ban tổ chức sẽ chia nhóm các thành viên được chọn thành $2$ đội tương đối đều nhau về ranking.
+\end{itemize}
+
+Ranking của 1 đội là tổng ranking của các thành viên trong đội. Do đó, ban tổ chức phải tính toán để xác định $1$ vị trí sao cho đội lệch ranking giữa $2$ đội là nhỏ nhất và các thành viên trong đội phải có số thứ tự liên tiếp nhau trong danh sách (không quan trọng số lượng thành viên trong đội). 
+
+\textbf{Yêu cầu:} Cho một dãy $n$ game thử với ranking tương ứng với $q$ cặp số nguyên $u, v$ được hệ thống sinh ngẫu nhiên, hãy viết chương trình cho biết độ lệch ranking nhỏ nhất của từng lượt sau khi ban tổ chức thực hiện ghép đội ngẫu nhiên. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm $q + 2$ dòng:
+\begin{itemize}
+    \item Dòng 1: Hai số nguyên dương $n, q (1 \leq n, q \leq 10^5)$ là số game thủ và số lượt đấu.
+    \item Dòng 2: $n$ số nguyên dương $a_1, a_2, ..., a_n (1 \leq a_i \leq 10^9, \forall i = 1 ... n)$ là ranking của các game thủ.
+    \item $q$ dòng tiếp theo, dòng thứ $i (1 \leq i \leq q)$ chứa hai số nguyên dương $u_i, v_i (1 \leq u_i < v_i \leq n)$ là cặp số được hệ thống sinh ngẫu nhiên.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm $q$ dòng, dòng thứ $i (1 \leq i \leq q)$ chứa độ lệch ranking nhỏ nhất của lượt đấu thứ $i$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq n, q \leq 100$.
+    \item Subtask 2 (40\%): $1 \leq n \leq 10^3; 1 \leq q \leq 10^4$.
+    \item Subtask 3 (20\%): Không có ràng buộc gì thêm.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+6 2\\
+4 2 2 1 5 6
+1 4
+2 5
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1\\
+0
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+
+Ở lượt thứ $1$, ranking của các game thủ có số thứ tự từ $1$ đến $4$ là: $4 2 2 1$. Ta có thể chia được như sau:
+
+\begin{itemize}
+    \item $\left\{ 4 \right\}$ và $\left\{ 2, 2, 1 \right\}$. Độ lệch ranking giữa $2$ đội là $1$. 
+    \item $\left\{ 4, 2 \right\}$ và $\left\{ 2, 1 \right\}$. Độ lệch ranking giữa $2$ đội là $3$. 
+    \item $\left\{ 4, 2, 2 \right\}$ và $\left\{ 1 \right\}$. Độ lệch ranking giữa $2$ đội là $7$.
+\end{itemize}
+
+Ban tổ chức sẽ chia đội theo cách chia đầu tiên với độ lệch ranking nhỏ nhất là $1$.
+
+Ở lượt thứ $2$, ranking của các game thủ có số thứ tự từ $2$ đến $5$ là: $2 2 1 5$. Ta có thể chia được với độ lệch ranking giữa $2$ đội là $0$.
 
 \end{document}
 
