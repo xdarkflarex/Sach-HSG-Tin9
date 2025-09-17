@@ -182,8 +182,8 @@ Cho dãy số nguyên dương $a_1, a_2, ..., a_n$. Chia dãy này thành hai ph
 
 \textbf{Yêu cầu:}
 Gọi $T_1$ và $T_2$ lần lượt là tổng các số trong phần thứ nhất và phần thứ hai. Hãy tìm giá trị nhỏ nhất của $|T_1 - T_2|$.
-\textbf{Dữ liệu đầu vào:}
 
+\textbf{Dữ liệu đầu vào:}
 Gồm hai dòng:
 \begin{itemize}
     \item Dòng đầu tiên chứa số nguyên dương $n (2 < n \leq 10^6)$ là số lượng phần tử trong dãy.
@@ -247,6 +247,7 @@ An có $n$ đoạn thẳng. Cậu ta nhận thấy rằng một số đoạn th�
 \textbf{Yêu cầu:}
 
 Hỏi rằng số hình vuông nhiều nhất An có thể xếp được là bao nhiêu?
+
 \textbf{Dữ liệu đầu vào:}
 Gồm hai dòng:
 \begin{itemize}
@@ -2590,6 +2591,1394 @@ Gồm $q$ dòng, dòng thứ $i (1 \leq i \leq q)$ chứa độ lệch ranking n
 Ban tổ chức sẽ chia đội theo cách chia đầu tiên với độ lệch ranking nhỏ nhất là $1$.
 
 Ở lượt thứ $2$, ranking của các game thủ có số thứ tự từ $2$ đến $5$ là: $2 2 1 5$. Ta có thể chia được với độ lệch ranking giữa $2$ đội là $0$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\section{ĐỀ HSG 9 THCS THÀNH PHỐ ĐÀ NẴNG 2024 - 2025}
+
+\subsection{Bài 1: Kí Tự}
+\textbf{Đề bài:}
+Cho một xâu $s$ chỉ chứa các kí tự in hoa trong bảng chữ cái $A...Z$.
+
+\textbf{Yêu cầu:}
+Hãy kiểm tra xâu $s$ còn thiếu những ký tự nào trong bảng chữ cái tiếng Anh $A...Z$.
+
+\textbf{Dữ liệu đầu vào:}
+Một dòng duy nhất chứa xâu $s$ có độ dài không quá $10^5$ ký tự.
+
+\textbf{Dữ liệu đầu ra:}
+In ra các ký tự chưa xuất hiện trong xâu $s$, các ký tự được viết liền nhau theo thứ tự tăng dần.
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+EFGHJABCD
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+IKLMNOPQRSTUVWXYZ
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Số tròn chục}
+\textbf{Đề bài:}
+
+Số tròn chục là số có chữ số hàng đơn vị là chữ số $0$.
+
+\textbf{Yêu cầu:}
+Cho hai số tự nhiên $L$ và $R$. Hãy đếm xem có bao nhiêu số tròn chục lớn hơn $L$ và nhỏ hơn $R$.
+
+\textbf{Dữ liệu đầu vào:}
+Nhập vào số tự nhiên $L, R$ $(L < R \leq 10^{12})$. Mỗi số trên một dòng.
+
+\textbf{Dữ liệu đầu ra:}
+Ghi ra kết quả của bài toán.
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+31
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có 3 số tròn chục lớn hơn 5 và
+nhỏ hơn 31 là: 10, 20, 30
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Tổng liên tiếp}
+\textbf{Đề bài:}
+Trong cuộc thi "Học sinh tài năng" được tổ chức tại một trường học, ban tổ chức chuẩn bị một
+bảng điểm điện tử để hiển thị điểm số của từng thí sinh. Điểm số của $n$ thí sinh được hiển thị theo thứ
+tự từ thí sinh $1$ đến thí sinh $n$, sau đó lặp lại vô hạn lần. Cụ thể, sau khi hiển thị điểm của thí sinh $n$,
+bảng điểm sẽ quay lại hiển thị điểm của thí sinh $1$ rồi thí sinh $2$, và cứ thế không ngừng.
+
+\textbf{Yêu cầu:}
+Hãy giúp ban tổ chức tính tổng $k$ điểm số liên tiếp xuất hiện trên bảng điểm, bắt đầu từ vị trí $p$.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa ba số nguyên dương $n, k, p$ lần lượt là số thí sinh trong cuộc thi, số lượng
+điểm số cần tính và vị trí bắt đầu tính điểm trên bảng điện tử.
+    \item Dòng 2: Ghi $n$ số nguyên dương $(a_1, a_2, ... , a_n)$ $(1 \leq a_i \leq 10^9)$.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+In ra một số nguyên duy nhất là kết quả của bài toán lấy dư cho $10^9 + 7$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $n \leq 10^3; p = 1; k \leq n$.
+    \item Subtask 2 (30\%): $n \leq 10^3; p, k \leq 10^6$.
+    \item Subtask 3 (30\%): $n \leq 10^6; p, k \leq 10^{18}$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+6 7 3\\
+4 3 6 2 9 5
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+35
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+$7$ số nguyên liên tiếp xuất hiện trên màn hình bắt đầu
+
+từ số xuất hiện thứ $3$ là $6$ $2$ $9$ $5$ $4$ $3$ $6$.
+
+Kết quả: $(6 + 2 + 9 + 5 + 4 + 3 + 6)$ \% $(10^9 + 7) = 35$
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Chiến Binh}
+
+\textbf{Đề bài:}
+Trong một vương quốc xa xưa, một vị tướng huyền thoại đang tập hợp một đội quân bất bại để chuẩn
+bị cho một cuộc chiến vĩ đại. Đội quân này có một cơ chế huấn luyện đặc biệt theo quy luật sau:
+\begin{itemize}
+    \item Ngày đầu tiên (ngày thứ $0$): Đội quân có $n$ chiến binh ở cấp độ $1$.
+    \item Mỗi ngày tiếp theo: 
+    \begin{itemize}
+        \item Mỗi chiến binh cấp $i$ sẽ huấn luyện và chiêu mộ thêm $i$ tân binh (tất cả đều có cấp $1$).
+Những tân binh này sẽ bắt đầu huấn luyện và chiêu mộ binh lính từ ngày sau.
+        \item Đồng thời, chiến binh cấp $i$ sẽ trở nên mạnh hơn và thăng lên cấp $i + 1$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Yêu cầu:}
+Hãy xác định sau $k$ ngày, tổng số chiến binh trong quân đội là bao nhiêu.
+Kết quả in ra là số nguyên duy nhất, lấy modulo $10^9 + 7$.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai số nguyên $n, k$ $(1 \leq n \leq 10^3, 1 \leq k \leq 10^5)$.
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên duy nhất là tổng số chiến binh sau $k$ ngày, lấy modulo $10^9 + 7$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $n \leq 10^2; k \leq 10^3$.
+    \item Subtask 2 (60\%): $n \leq 10^3; k \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+4
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+170
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Với 5 chiến binh ban đầu, sau 4 ngày tổng
+số chiến binh có trong quân đội là 170.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main() {
+    int n;
+    ll S;
+    cin >> n >> S;
+    vector<ll> a(n+1, 0), prefix(n+1, 0);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+        prefix[i] = prefix[i-1] + a[i];
+    }
+    ll res = 0;
+    for (int l = 1; l <= n; ++l) {
+        for (int r = l; r <= n; ++r) {
+            ll sum = prefix[r] - prefix[l-1];
+            if (abs(sum) > S) res++;
+        }
+    }
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section{ĐỀ HSG 9 THCS TỈNH QUẢNG NINH 2024 - 2025}
+
+\subsection{Bài 1: Oẳn tù tì}
+\textbf{Đề bài:}
+Trò chơi oẳn tù tì là một trò chơi dân gian phổ biến, thường chơi khi hai người đối diện nhau. Mỗi người sẽ đưa ra một trong ba hình dạng của bàn tay như sau:
+
+- Búa - thể hiện bằng cách cả bàn tay nắm chặt lại;
+
+- Kéo - thể hiện bằng cách ngón trỏ và ngón giữa tạo thành hình chữ V;
+
+- Bao - thể hiện bằng cách cả bàn tay xòe ra.
+
+Người chơi sẽ đồng loạt đưa ra một trong ba lựa chọn và so sánh với đối thủ. Nếu hai người chọn giống nhau thì hòa, còn nếu khác nhau thì sẽ có người thắng và người thua: Búa thắng Kéo (vì búa đập kéo), Kéo thắng Bao (vì kéo cắt bao), Bao thắng Búa (vì bao bọc búa).
+
+Hai bạn An và Bình sẽ chơi n lần. Tuy nhiên, trước đó An đã tìm thấy một ghi chú cho biết Bình sẽ lựa chọn gì trong các lần chơi. Bạn hãy xác định số lần chơi tối đa mà An có thể thắng, \textbf{nếu anh ta không được phép đưa ra cùng một lựa chọn trong hai lần liên tiếp}.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Chứa một số nguyên $n$ $(1 \leq n \leq 10^5)$ là số lần chơi.
+    \item Dòng 2: Chứa một xâu $s$ độ dài $n$, trong đó kí tự (viết hoa) thứ $i$ là 'R' hoặc 'S' hoặc 'P' biểu thị trong lần chơi
+thứ $i$, Bình ra Búa hoặc Kéo hoặc Bao tương ứng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên là số lần chơi tối đa mà An có thể thắng, nếu anh ta không được phép đưa ra cùng một lựa chọn trong hai lần liên tiếp.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): Xâu $s$ không chứa hai kí tự liên tiếp giống nhau;
+    \item Subtask 2 (30\%): $1 \leq n \leq 15$;
+    \item Subtask 3 (40\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+RPRRS
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, An có thể đưa ra PSPSR và anh ta thắng ở lần chơi thứ nhất, thứ hai, thứ ba, thứ năm và thua ở lần chơi thứ tư.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Khung tranh}
+\textbf{Đề bài:}
+An có $n$ thanh gỗ có chiều dài $1$ và $m$ thanh gỗ có chiều dài $2$. Các thanh gỗ có thể được nối với nhau bằng cách xếp chúng thẳng hàng hoặc vuông góc.
+
+An muốn lắp ráp một khung hình chữ nhật từ các thanh gỗ này, để sau đó anh có thể đặt một tờ giấy vào khung nafy và vẽ một phong cảnh thật đẹp tặng cho mẹ mình nhân dịp Ngày Quốc tế Phụ nữ.
+
+Hơn nữa An nghĩ rằng diện tích khung hình chữ nhật càng lớn thì món quà sẽ càng có ý nghĩa. Vì vậy, điều quan trọng là anh ta phải xác định diện tích tối đa của khung hình chữ nhật có thể được ghép từ các thanh gỗ có sẵn.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Chứa số nguyên $n$ $(0 \leq n \leq 10^9)$ là số thanh gỗ có chiều dài 1.
+    \item Dòng 2: Chứa số nguyên $m$ $(0 \leq m \leq 10^9)$ là số thanh gỗ có chiều dài 2.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên là diện tích tối đa của khung hình chữ nhật có thể được tạo thành từ các thanh gỗ có sẵn.
+
+Nếu không thể tạo thành bất kỳ khung hình chữ nhật nào từ các thanh gỗ có sẵn thì in ra số $0$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (10\%): $n = 0$ hoặc $m = 0$;
+    \item Subtask 2 (20\%): $n, m \leq 20$;
+    \item Subtask 3 (20\%): $n, m \leq 1000$;
+    \item Subtask 4 (20\%): $n, m \leq 5 \times 10^5$;
+    \item Subtask 5 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+0
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có $5$ thanh gỗ chiều dài $1$. Từ chúng, An có thể tạo một hình vuông có cạnh $1$, diện tích của nó là $1$ và sẽ còn lại $1$ thanh gỗ.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4\\
+3
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+0
+\end{tcolorbox}
+\textbf{Giải thích:}
+Có $4$ thanh gỗ chiều dài $1$ và $3$ thanh gỗ chiều dài $2$. Từ chúng, An có thể tạo thành một hình chữ nhật có kích thước $2$ × $3$.
+
+\textbf{Ví dụ 3:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3\\
+0
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+0
+\end{tcolorbox}
+\textbf{Giải thích:}
+có $3$ thanh gỗ chiều dài bằng $1$. Từ chúng, An không thể tạo thành hình chữ nhật.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Dãy số bitonic}
+\textbf{Đề bài:}
+Dãy số $b_1, b_2, ... , b_k$ được gọi là dãy \textbf{bitonic} nếu $b_1 < b_2 < ... < b_i > ... > b_k$ với $1 \leq i \leq k$. Chú ý rằng nếu $i = 1$ thì $b_1 > b_2 > ... > b_k$ và dãy $b$ là dãy giảm, còn nếu $i = k$ thì $b_1 < b_2 < ... < b_k$ và dãy $b$ là dãy tăng, còn nếu $1 < i < k$ thì các phần tử từ $b_1$ đến $b_i$ tăng dần và các phần tử từ $b_i$ đến $b_k$ giảm dần.
+
+Ví dụ các dãy sau là dãy \textbf{bitonic}:
+\begin{itemize}
+    \item $1$;
+    \item $1, 2, 3, 2$;
+    \item $1, 4, 10$;
+    \item $3, 2$.
+\end{itemize}
+và các dãy sau không là dãy \textbf{bitonic}:
+\begin{itemize}
+    \item $1, 1$;
+    \item $2, 1, 3$.
+\end{itemize}
+Cho dãy số $a_1, a_2, ... , a_n$. Hãy đếm số cặp $(l, r)$ sao cho $1 \leq l \leq r \leq n$ và dãy $a_l, a_{l + 1}, ..., a_r$ là dãy \textbf{bitonic}.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Chứa số nguyên $n$ $(1 \leq n \leq 3 \times 10^5)$.
+    \item Dòng 2: Chứa $n$ số nguyên $a_1, a_2, ..., a_n$ $(1 \leq a_i \leq n)$.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên là số cặp $(l, r)$ sao cho $1 \leq l \leq r \leq n$ và dãy $a_l, a_{l + 1}, ..., a_r$ là dãy \textbf{bitonic}.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $n \leq 500$;
+    \item Subtask 2 (30\%): $n \leq 5000$;
+    \item Subtask 3 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+1 1 2 3 1
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+11
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ đầu tiên, các cặp sau là thỏa mãn:
+
+\begin{enumerate}
+\item $(1, 1)$ ứng với dãy $1$;
+\item $(2, 2)$ ứng với dãy $2$;
+\item $(2, 3)$ ứng với dãy $1, 2$;
+\item $(2, 4)$ ứng với dãy $1, 2, 3$;
+\item $(2, 5)$ ứng với dãy $1, 2, 3, 1$;
+\item $(3, 3)$ ứng với dãy $2$;
+\item $(3, 4)$ ứng với dãy $2, 3$;
+\item $(3, 5)$ ứng với dãy $2, 3, 1$;
+\item $(4, 4)$ ứng với dãy $3$;
+\item $(4, 5)$ ứng với dãy $3, 1$;
+\item $(5, 5)$ ứng với dãy $1$.
+\end{enumerate}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3\\
+1 1 1
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Sửa đường}
+
+\textbf{Đề bài:}
+Ở thành phố của An mọi thứ đều tốt, ngoại trừ một con đường. Con đường này có $n$ cái hố xếp theo một hàng. Chúng ta đánh số các hố này từ $1$ đến $n$ theo thứ tự từ đầu đến cuối con đường.
+
+An thực sự muốn giúp thành phố của mình. Vì vậy, anh ta muốn sửa chữa ít nhất $k$ cái hố (có thể anh ta sửa chữa nhiều hơn) trên con đường này.
+
+Thành phố có $m$ công ty sửa đường, công ty thứ $i$ cần $c_i$ đơn vị tiền để sửa chữa một đoạn đường có chứa các hố với chỉ số nhỏ nhất là $l_i$ và lớn nhất là $r_i$. Các công ty này rất tham lam, vì vậy nếu họ sửa chữa một đoạn đường có chứa một số hố đã được sửa, họ không giảm giá sửa chữa đoạn đường này.
+
+Hãy xác định số tiền tối thiểu mà An sẽ cần để sửa chữa ít nhất $k$ cái hố.
+
+\textbf{Yêu cầu:}
+Hãy lập trình xác định chênh lệch điểm nhỏ nhất của hai bạn mà thầy Sơn chọn.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Chứa $3$ số nguyên $n, m, k$ $(1 \leq n \leq 300; 1 \leq m \leq 10^5; 1 \leq k \leq n)$.
+    \item Dòng $i$ trong $m$ dòng tiếp theo: Chứa $3$ số nguyên $l_i, r_i, c_i$ $(1 \leq l_i \leq r_i \leq n; 1 \leq c_i \leq 10^9)$ mô tả công ty thứ $i$ cần $c_i$ đơn vị tiền để sửa chữa đoạn đường từ hố $l_i$ đến $r_i$.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên là số tiền tối thiểu mà An cần để sửa chữa ít nhất $k$ cái hố. Trong trường hợp không thể sửa ít nhất $k$ cái hố thì ghi ra số $-1$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (10\%): $k = 1$;
+    \item Subtask 2 (15\%): $1 \leq l_i = r_i \leq n$ với mọi $i = 1, 2, ..., m$;
+    \item Subtask 3 (20\%): $1 \leq m \leq 20$;
+    \item Subtask 4 (25\%): $1 \leq n \leq 100$ và $1 \leq m \leq 1000$;
+    \item Subtask 5 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+10 4 6\\
+7 9 11\\
+6 9 13\\
+7 7 7\\
+3 5 6
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+17
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Phương án tối ưu là sử dụng công ty thức nhất và thứ tư để sửa đường. Tổng cộng có $6$ hố được sửa chữa là $3, 4, 5, 7, 8, 9$ với tổng chi phí là $11 + 6 = 17$.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+10 7 1\\
+3 4 15\\
+8 9 8\\
+5 6 8\\
+9 10 6\\
+1 4 2\\
+1 4 10\\
+8 10 13
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+2
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Phương án tối ưu là sử dụng công ty thứ năm sửa đường và có $4$ hố được sửa chữa là $1, 2, 3, 4$ (thoả mãn tối thiểu $1$ hố được sửa chữa) với chi phí là $2$.
+
+\textbf{Ví dụ 3:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+10 1 9\\
+5 10 14
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+-1
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Chỉ có duy nhất một công ty sửa đường và sửa được $6$ hố. Vì vậy không có phương án nào để sửa được ít nhất $9$ hố.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main() {
+    int n;
+    ll S;
+    cin >> n >> S;
+    vector<ll> a(n+1, 0), prefix(n+1, 0);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+        prefix[i] = prefix[i-1] + a[i];
+    }
+    ll res = 0;
+    for (int l = 1; l <= n; ++l) {
+        for (int r = l; r <= n; ++r) {
+            ll sum = prefix[r] - prefix[l-1];
+            if (abs(sum) > S) res++;
+        }
+    }
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section{ĐỀ HSG 9 THCS TỈNH BẮC NINH 2024 - 2025}
+
+\subsection{Bài 1: Bánh kem}
+\textbf{Đề bài:}
+Nhân dịp Giáng sinh, An muốn tự làm một chiếc bánh kem thật đẹp để trang trí cho buổi lễ. 
+An muốn để chiếc bánh kem trên mặt bàn hình tròn ở phòng khách. Tuy nhiên nhà An chỉ có khuôn
+làm được chiếc bánh kem hình chữ nhật có kích thước $a \times b$, An băn khoăn rằng với chiếc
+bánh kem kích thước $a \times b$ có thể đặt lên mặt bàn hình tròn bán kính $r$ mà không có
+phần nào của bánh bị tràn ra ngoài biên của mặt bàn hay không.
+
+\textbf{Yêu cầu:}
+Với $3$ số $r, a, b$ tương ứng là bán kính của mặt bàn và kích thước chiếc bánh kem. Bạn hãy cho biết có thể đặt chiếc bánh kem lên mặt bàn kính tròn hay không?
+
+
+\textbf{Dữ liệu đầu vào:}
+Gồm $3$ số $r, a, b$ $(r, a, b \leq 10^5)$ các số cách nhau $1$ dấu cách tương ứng là bán kính của mặt bàn, kích thước của chiếc bánh.
+
+\textbf{Dữ liệu đầu ra:}
+Ghi \textbf{YES/NO} tương ứng với \textbf{CÓ/KHÔNG}.
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3 3 4
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+YES
+\end{tcolorbox}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+1 3 4
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+NO
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Số nguyên tố}
+\textbf{Đề bài:}
+Trong giờ Tin học của lớp 9A thầy Minh có đưa ra một trò chơi trúng thưởng như sau:
+
+Thầy viết lên bảng một xâu $S$, bạn nào tìm ra số nguyên tố lớn nhất có trong xâu $S$ sẽ nhận được phần thưởng.
+
+\textbf{Yêu cầu:}
+Xâu $S$ gồm $n$ ký tự chỉ chứa chữ cái và chữ số, học sinh cần chọn $1$ đoạn con liên tiếp chỉ gồm các chữ số để tạo
+thành $1$ số không quá $5 \times 10^6$ và là số nguyên tố. Học sinh chọn được số nguyên tố lớn nhất sẽ được tặng thưởng
+số tiền bằng đúng số được chọn. Bạn hãy giúp các học sinh chọn ra số nguyên tố lớn nhất để nhận được nhiều tiền thưởng nhất có thể.
+
+\textit{Ví dụ: S = 'cd0056aB45k1250cd19hk23' ta có thể tạo ra các số như: $0, 00, 056, 5, 56, 6, 4, 45, 5.....$ tuy nhiên chỉ có các số $2, 3, 5, 19, 23$ là các số nguyên tố được tạo ra là $23$.}
+
+\textbf{Dữ liệu đầu vào:}
+Chứa một xâu $S$ có độ dài không quá $5 \times 10^6$ ký tự.
+
+\textbf{Dữ liệu đầu ra:}
+Một số nguyên là số tiền mà học sinh nhận được.
+Nếu không có số nguyên tố nào thì số tiền nhận được là 0.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (75\%): $1 \leq N \leq 255$, số nguyên tố lớn nhất tạo được $\leq 10^6$;
+    \item Subtask 2 (25\%): $N \leq 5 \times 10^6$, số nguyên tố lớn nhất tạo được $\leq 5 \times 10^6$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+cd0056aB45k1250cd19hk23
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+23
+\end{tcolorbox}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+cA12cg42m
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+0
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Điểm số}
+\textbf{Đề bài:}
+Ngày hội đọc sách được tổ chức định kỳ tại trường THCS A. Mỗi quyển sách trong thư viện trường có một "điểm số" đại diện cho độ phổ biến của nó. Có $n$ quyển sách trong thư viện được đánh số thứ tự từ $1$ đến $n$ tương ứng với điểm số là các số nguyên $A_1, A_2, ... , A_n$.
+
+Một đoạn con \textit{[h; r]} là một dãy các điểm số liên tiếp $A_h, A_{h + 1}, ... , A_r$ $(1 \leq h \leq r \leq n)$. Đoạn \textit{[h; r]} được gọi là một đoạn điểm số đặc biệt nếu $A_h = A_r$ và tổng các điểm số của đoạn này là lớn nhất.
+
+\textbf{Yêu cầu:}
+Hãy đưa ra tổng của đoạn điểm số đặc biệt.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Ghi số nguyên dương $n$ là số lượng quyển sách.
+    \item Dòng 2: Ghi $n$ số nguyên $A_1, A_2, ... , A_n$ $(|A_i| \leq 10^3, 1 \leq i \leq n \leq 5 \times 10^5)$, mỗi số cách nhau bởi một khoảng trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Kết quả theo yêu cầu của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%) $1 \leq n \leq 10^2$;
+    \item Subtask 2 (40\%): $n \leq 5 \times 10^5; 0 < A_i \leq 10^3; \forall i \in [1, n]$;
+    \item Subtask 3 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8\\
+5 3 10 3 2 -1 2 9
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+16
+\end{tcolorbox}
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+6\\
+5 20 6 1 2 6
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+20
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Số đặc biệt}
+
+\textbf{Đề bài:}
+Hôm nya cô giáo B dạy học sinh về dãy con tăng dài nhất. Dãy con tăng dài nhất là dãy con nhận được từ dãy ban đàu bằng cách xoá đi một số số, giữ nguyên thứ tự ban đàu, sao cho dãy còn lại thoả mãn tính chất hai số cạnh nhau thì số đứng trước nhỏ hơn số đứng sau.
+
+Sau khi dạy xong, cô giáo B thấy rằng một số số xuất hiện trong nhiều dãy con tăng dài nhất, cô gọi đó là số đặc biệt.
+
+Cho dãy số nguyên $a_1, a_2, ... , a_n$ khác nhau từng đôi một $(n \leq 10^5, 1 \leq a_i \leq n)$. Số $a_i$ được gọi là một số đặc biệt đối với dãy số trên nếu như $a_i$ thuộc ít nhất một dãy con tăng dài nhất của $A$.
+
+\textbf{Yêu cầu:}
+Tìm các số đặc biệt của dãy $A$.
+
+\textbf{Dữ liệu đầu vào:}
+\begin{itemize}
+    \item Dòng 1: Ghi T $(1 \leq T \leq 10)$ là số bộ test.
+    \item T nhóm dòng tiếp theo, mỗi nhóm gồm hai dòng:
+    \begin{itemize}
+        \item Dòng 1: Số $n$.
+        \item Dòng 2: $n$ số nguyên có thứ tự từ $1$ đến $n$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm T dòng, mỗi dòng ghi các số đặc biệt của bộ test tương ứng theo giá trị tăng dần.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $n \leq 10^2$;
+    \item Subtask 2 (40\%): $n \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+2\\
+7\\
+1 2 3 7 4 5 6\\
+5\\
+1 4 3 2 5
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+1 2 3 4 5 6\\
+1 2 3 4 5
+\end{tcolorbox}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main() {
+    int n;
+    ll S;
+    cin >> n >> S;
+    vector<ll> a(n+1, 0), prefix(n+1, 0);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+        prefix[i] = prefix[i-1] + a[i];
+    }
+    ll res = 0;
+    for (int l = 1; l <= n; ++l) {
+        for (int r = l; r <= n; ++r) {
+            ll sum = prefix[r] - prefix[l-1];
+            if (abs(sum) > S) res++;
+        }
+    }
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section{ĐỀ HSG 9 THCS TỈNH NINH BÌNH 2024 - 2025}
+\textbf{Thời gian làm bài: 150 phút} 
+\textbf{Độ khó: }
+
+\subsection{Bài 1: Đếm số}
+\textbf{Đề bài:}
+Cho $4$ số nguyên dương $a, b, x, y (2 \leq a, b \leq 10^9; 2 \leq x \leq y \leq 10^{12})$.
+
+\textbf{Yêu cầu:}
+
+Đếm số lượng số nguyên thuộc đoạn $\left[ x, y \right]$ chia hết cho $a$ nhưng không chia hết cho $b$. 
+
+\textbf{Dữ liệu đầu vào:}
+
+Gồm một dòng chứa $4$ số nguyên dương $a, b, x, y$. Các số cách nhau bởi một dấu cách.
+
+\textbf{Dữ liệu đầu ra:}
+
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): $2 \leq x \leq y < 10^6$;
+    \item Subtask 2 (40\%): $10^6 \leq x \leq y \leq 10^{9}$;
+    \item Subtask 3 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4 10 24 44
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+5
+\end{tcolorbox}
+\textbf{Giải thích:}
+
+Trong đoạn $[24, 44]$ có $5$ số nguyên thoa mãn điều kiện chia hết cho $4$ nhưng không chia hết cho $10$ là $24, 28, 32, 36, 44$.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8 4 14 20
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+0
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong đoạn $[14, 20]$ không có số nguyên nào thoa mãn điều kiện chia hết cho $8$ nhưng không chia hết cho $4$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Cặp số}
+\textbf{Đề bài:}
+Cho dãy số gồm $n$ số nguyên $a_1, a_2, ... , a_n$ và một số nguyên dương $k$. Số nguyên $a_i, a_j$ là số nguyên lần lượt ở các vị trí thứ $i$ và thứ $j$.
+
+\textbf{Yêu cầu:}
+
+Hãy cho biết có bao nhiêu cách chọn các cặp số $i$ và $j$ thỏa mãn: $i < j$ và $a_i + a_j$ chia hết cho $k$. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $n$ và $k (1 < n, k < 10^6)$ mỗi số cách nhau một khoảng trắng.
+    \item Dòng 2: Chứa $n$ số nguyên $a_1, a_2, ... , a_n (\| a_i \| < 10^9; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+
+\begin{itemize}
+    \item Subtask 1 (60\%): $n < 10^3$;
+    \item Subtask 2 (40\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4 6\\
+2 4 8 -8
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, có $4$ cặp số thỏa mãn là: $(1, 2), (1, 4), (2, 3), (3, 4)$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Xâu nguyên tố cùng nhau}
+\textbf{Đề bài:}
+Cho xâu $S$ chỉ có các kí tự chữ cái và kí tự chữ số có độ dài không vượt quá $10^6$ kí tự. Các số trong xâu $S$ 
+là một dãy các kí tự chữ số liên tiếp được phân tách bởi các kí tự chữ cái, xâu $S$ bắt đầu bằng một kí tự chữ cái và kết thúc cũng bằng 
+một kí tự chữ cái. Khi thực hiện lấy ra các số trong $S$, ta thu được một dãy số $A$ gồm $n$ số nguyên dương $a_1, a_2, ..., a_n (0 < a_i \leq 10^6)$.
+
+Hai số nguyên dương $x, y$ được gọi là nguyên tố cùng nhau nếu ước chung lớn nhất của chúng bằng $1$. Một đoạn con liên tiếp trong dãy $A$ được gọi là nguyên tố 
+cùng nhau nếu mọi cặp số trong đoạn đó là nguyên tố cùng nhau.
+
+\textbf{Yêu cầu:}
+Tìm đoạn con liên tiếp nguyên tố cùng nhau dài nhất.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm một dòng chứa xâu $S (|S| \leq 10^6)$.
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số duy nhất là độ dài của đoạn con liên tiếp nguyên tố cùng nhau dài nhất của dãy $A$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (30\%): $n \leq 20$;
+    \item Subtask 2 (40\%): Các số nguyên xuất hiện trong xâu $S$ đều là số nguyên tố
+    \item Subtask 3 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+a14a5ac7a6bb
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, ta có dãy số $A = [14, 5, 7, 6]$. Đoạn con liên tiếp nguyên tố cùng nhau dài nhất là $[5, 7, 6]$ có độ dài bằng 3.
+
+\textbf{Ví dụ 2:}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+ac5b2c3a7b
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, ta có dãy số $A = [5, 2, 3, 7]$. Đoạn con liên tiếp nguyên tố cùng nhau dài nhất là $[5, 2, 3, 7]$ có độ dài bằng 4.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Dãy số}
+\textbf{Đề bài:}
+Cho dãy số $a_1, a_2, ... , a_n$ các số $a_i (1 \leq i \leq n)$ không quá $m$ và có giá trị đôi một khác nhau, trong đó có đúng một số có giá trị bằng $0$.
+
+\textbf{Yêu cầu:}
+Thay thế số $0$ thành một giá trị bất kì không được trùng với các giá trị đã có để nhận được một dãy con có các giá trị liên tiếp dài nhất có thể. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $n, m (1 \leq n < m \leq 10^6)$.
+    \item Dòng 2: Chứa $n$ số nguyên $a_1, a_2, ... , a_n (0 \leq a_i < m; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq n \leq 100$;
+    \item Subtask 2 (30\%): $100 < n \leq 1000$;
+    \item Subtask 3 (30\%): $1000 < n < 10^6$
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8 5\\ 
+8 2 0 5 7
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Trong ví dụ trên, ta có thể thay số $0$ thành số $6$ để nhận được dãy con có các giá trị liên tiếp dài nhất là $5, 6, 7, 8$ có độ dài bằng $4$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\section{ĐỀ HSG 9 THCS TP CẦN THƠ 2024 -2025}
+
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+
+\subsection{Bài 1: Luận văn}
+
+\textbf{Đề bài:}
+Trong một đợt tổng kết khóa học, trường có $n$ bài luận văn để chấm. Luận văn thứ $1$ có số lỗi là $a_i$, trường chọn ra đúng $k$ luận văn có số lỗi nhỏ nhất trong số $n$ luận văn trên để khen thưởng. 
+
+\textbf{Yêu cầu:}
+Hãy lập trình xác định tổng số lỗi nhỏ nhất của $k$ luận văn được chọn. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $n, k (1 \leq k \leq n \leq 10^6)$.
+    \item Dòng 2: Chứa $n$ số nguyên dương $a_1, a_2, ... , a_n (1 \leq a_i \leq 10^4; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+Bài này không có chia Subtask. 
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5 3\\
+1 2 3 1 4
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có 5 luận văn, số lỗi lần lượt theo thứ tự là $(1, 2, 3, 1, 4)$. Chọn 3 luận văn $(1 + 2 + 1 = 4)$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Vị trí}
+
+\textbf{Đề bài:}
+Một xâu được gọi là xâu chuẩn hóa nếu nó tuân theo quy tắc sau: ký tự đầu tiên được viết in hoa, các ký tự còn lại là hai ký tự thường và giữa các ký tự không có khoảng trắng. 
+
+Cho một danh sách gồm $n$ dòng, mỗi dòng chứa một xâu và mỗi câu chỉ chứa các ký tự chữ cái tiếng Amh, không có ký tự đặc biệt.
+
+\textbf{Yêu cầu:}
+Hãy lập trình xác định vị trí các xâu chưa chuẩn hóa trong danh sách. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm $n + 1$ dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa số nguyên dương $n (1 \leq n \leq 10^3)$.
+    \item $n$ dòng tiếp theo: mỗi dòng ghi một xâu (độ dài của xâu không vượt quá $10^2$ ký tự).
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa các vị trí của các xâu chưa chuẩn hóa trong danh sách, các vị trí cách nhau một dấu cách. Nếu không tìm được kết quả thì chỉ ghi duy nhất số $0$.
+
+\textbf{Ràng buộc dữ liệu:}
+Bài này không có chia Subtask.
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5\\
+Anh\\
+NgOc\\
+Phuong\\
+tRan\\
+TunG
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+2 4 5
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Các xâu chưa chuẩn hóa là: "NgOc", "tRan", "Tun" ở vị trí $2, 4, 5$.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+3\\
+Binh\\
+Toan\\
+Sang
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+0
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Tất cả các xâu đều chuẩn hóa.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Gặp nhau}
+
+\textbf{Đề bài:}
+Một công ty du lịch A có hai xe vận chuyển khách hàng đi đến các điểm tham quan trong khu vực. Công ty đã sắp xếp lịch trình sao cho mỗi xe 
+luôn xuất phát đúng theo lịch trình. Xe thứ nhất cứ $x$ giờ thì về bến công ty, xe thứ hai cứ $y$ giờ thì về bến công ty.
+
+\textbf{Yêu cầu:}
+Hãy lập trình cho biết số lần gặp nhau của hai xe tại công ty sau $n$ giờ.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa số nguyên dương $n (10 \leq n \leq 10^6)$.
+    \item Dòng 2: Chứa hai số nguyên dương $x, y (1 \leq x \leq y \leq 10^2)$ cách nhau một ký tự trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $10 \leq n \leq 10^3$;
+    \item Subtask 2 (40\%): $10^3 < n \leq 10^6$.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+40\\ 
+6 4
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Hai xe xuất phát cùng thời điểm. Xe thứ nhất cứ $6$ giờ ghé vào công ty rồi đi, xe thứ hai cứ $4$ giờ ghé vào công ty rồi đi. 
+
+Trong $40$ giờ, hai xe gặp nhau $3$ lần tại công ty sau khi xuất phát.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Đội tuyển}
+
+\textbf{Đề bài:}
+Một trường học tổ chức kỳ thi học sinh giỏi môn tin học vào đội tuyển trường. Cuộc thi có nhiều vòng thi,, mỗi vòng thi được chấm theo một thang điểm. Giáo viên A có một danh sách điểm số của học sinh và muốn xác định có bao nhiêu học sinh được vào đội tuyển trường. Một học sinh được vào đội tuyển trường nếu tổng điểm của học sinh đó không nhỏ hơn 75\% của bạn có tổng điểm cao nhất trong danh sách. 
+
+\textbf{Yêu cầu:}
+Cho trước tổng điểm của từng học sinh từ các vòng thi. Hãy tính xem số bạn học sinh được vào đội tuyển trường. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa số nguyên dương $n (1 \leq n \leq 10^3)$.
+    \item Dòng 2: Chứa $n$ số nguyên dương $a_1, a_2, ... , a_n (1 \leq a_i \leq 10^2; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng là tổng điểm số các vòng thi của từng thí sinh.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là số lượng học sinh được vào đội tuyển trường.
+
+\textbf{Ràng buộc dữ liệu:}
+Bài này không có chia Subtask.
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4\\
+40 45 15 45
+\end{tcolorbox}
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+3
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có $4$ học sinh có điểm lần lượt là $40, 45, 15, 45$. Trong đó điểm cao nhất của thí sinh đạt được là $45$. Có $3$ học sinh được vào đội tuyển trường với số điểm lần lượt là $(40, 45, 45)$. 
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 5: Đơn hàng}
+
+\textbf{Đề bài:}
+Một công ty công nghệ chuyên giao hàng theo đơn bằng đội nhân viên của công ty. Trong công ty này có $n$ nhân viên. Nhân viên thứ $i$ có thời gian hoàn thành một đơn hàng trong $a_i$ giờ. Các nhân viên này giao hàng một cách độc lập. 
+
+\textbf{Yêu cầu:}
+Hãy lập trình xác định thời gian nhỏ nhất công ty hoàn thành giao được đơn hàng. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm hai dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $n, k (1 \leq n, k \leq 10^5)$ cách nhau một ký tự trắng, là số lượng nhân viên và số lượng đơn hàng cần hoàn thành. 
+    \item Dòng 2: Chứa $n$ số nguyên dương $a_1, a_2, ... , a_n (1 \leq a_i \leq 10^3; 1 \leq i \leq n)$ là thời gian hoàn thành một đơn hàng của nhân viên thứ $i$, các số kề nhau cách nhau một ký tự trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $1 \leq n, k \leq 10^2$;
+    \item Subtask 2 (40\%): $1 \leq n, k \leq 10^5$.
+\end{itemize}
+
+\textbf{Ví dụ 1:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+4 7\\
+1 4 2 5
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có $4$ nhân viên thời gian hoàn thành của mỗi nhân viên lần lượt là $1, 4, 2, 5$ giờ. Trong $4$ giờ: Nhân viên $1$ giao $4$ đơn, nhân viên $2$ giao $1$ đơn, nhân viên $3$ giao $2$ đơn. Tổng cộng $7$ đơn hàng được giao.
+
+\textbf{Ví dụ 2:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5 12\\
+2 4 4 4 5
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+10
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Có $5$ nhân viên thời gian hoàn thành của mỗi nhân viên lần lượt là $2, 4, 4, 4, 5$ giờ. Trong $10$ giờ: Nhân viên $1$ giao $5$ đơn, nhân viên $2$ giao $2$ đơn, nhân viên $3$ giao $2$ đơn, nhân viên $4$ giao $2$ đơn, nhân viên $5$ giao $1$ đơn. Tổng cộng $12$ đơn hàng được giao.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\section{ĐỀ HSG 9 THCS TP. HÀ NỘI 2024 - 2025}
+\textbf{Thời gian làm bài: 150 phút}
+\textbf{Độ khó: }
+
+\subsection{Bài 1: Cắt hình}
+\textbf{Đề bài:}
+Cho một tờ giấy hình chữ nhật kích thước $M (cm) \times N (cm)$ và một số tự nhiên $K$.
+
+\textbf{Yêu cầu:}
+Nếu cắt những hình vuông có kích thước $K (cm) \times K (cm)$ từ tờ giấy này thì diện tích còn lại nhỏ nhất là bao nhiêu $cm^2$. 
+
+\textbf{Dữ liệu đầu vào:}
+Gồm một dòng chứa ba số nguyên dương $M, N, K (1 \leq M, N, K \leq 10^9)$ cách nhau một khoảng trắng.
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là kết quả của bài toán.
+
+\textbf{Ràng buộc dữ liệu:}
+Bài này không có chia Subtask.
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+8 7 3
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+20
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+
+\begin{tikzpicture}[x=0.6cm,y=0.6cm]
+  % Lưới mảnh 6x6
+  \draw[step=1, line width=0.3pt] (0,0) grid (8,7);
+  % Khung ngoài đậm
+  \draw[line width=1.2pt] (0,0) rectangle (6,6);
+  % Hai đường đậm chia hình thành 4 hình vuông lớn (mỗi hình 3x3 ô)
+  \draw[line width=1.2pt] (3,0)--(3,6);
+  \draw[line width=1.2pt] (0,3)--(6,3);
+\end{tikzpicture}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 2: Mạch DNA}
+\textbf{Đề bài:}
+Cho mạch mã gốc DNA bốn loại nucleotide $A, T, G, C$. Để tiết kiệm bộ nhớ, mạch mã gốc đã được nén lại thành một chuỗi $S$ gồm cấc cặp là \textbf{số lần xuất hiện liên tiếp nucleotide} 
+và loại nucleotide tương ứng.
+
+\textbf{Ví dụ: } Mạch mã gốc $AAACAATGGGGA$ nén thành chuỗi $3A1C2A4G1A$.
+
+Các nucleotide ở hai mạch của phân tử DNA liên kết với nhau theo nguyên tắc bổ sung, trong đó $A$ liên kết với $T$, $G$ liên kết với $C$. Do vậy, nếu biết trình tự nucleotide trên một mạch có thể suy ra trình tự của mạch còn lại.
+
+\textbf{Ví dụ: } Một đoạn phân tử DNA ở sinh vật nhân thực có trình tự nucleotide trên mạch mã gốc là $AAACAATGGGGA$. Trình tự nucleotide trên mạch bổ sung của đoạn DNA này là : $TTTGTTACCCCT$.
+
+\textbf{Yêu cầu:}
+Cho một chuỗi ký tự $S$ mô tả mạch mã gốc DNA sau khi đã nén. Hãy lập trình xác định mạch bổ sung của mạch mã gốc sau khi giải nén.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm một dòng chứa chuỗi ký tự $S$ có độ dài không vượt quá $1000$. Dữu liệu đảm bảo chuỗi sau khi giả nén có độ dài không vượt quá $10^5$.
+
+\textbf{Dữ liệu đầu ra:}
+Chuỗi ký tự là mạch bổ sung của mạch mã gốc sau khi giải nén.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (20\%): Độ dài chuỗi $S$ là $2$, trong đó ký tự đầu tiên là chữ số, ký tự thứ hai là một trong $4$ chữ cái $A, T, G, C$. 
+    \item Subtask 2 (20\%): Có duy nhất một loại nucleotide. 
+    \item Subtask 3 (40\%): Số lần xuất hiện liên tiếp nucleotide $A, T, G, C$ nhỏ hơn $10$.
+    \item Subtask 4 (20\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5A2G1A11T1C
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+TTTTTCCTAAAAAAAAAAAG
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Mạch mã gốc sau khi giải nén là $AAAAAGGATTTTTTTTTTTC$. Mạch bổ sung của mạch mã gốc này là $TTTTTCCTAAAAAAAAAAAG$.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 3: Dãy đèn}
+
+\textbf{Đề bài:}
+Để trang trí Tết, Nam treo một dây đèn gồm $N$ bóng đèn, được đánh số từ $1$ đến $N$, từ trái sang phải. Mỗi bóng đèn khi bật sẽ có hai màu vàng hoặc đỏ. Dây đèn được nhúng một mã lệnh 
+cho phép nhận một số tự nhiên $X$. Khi đó, màu của bóng đèn thứ $X$ và các bóng đèn cách bóng đèn thứ $X$ không quá $K$ bóng đèn sẽ đều đổi từ vàng thành đỏ và ngược lại.
+
+Ban đầu các bóng đèn đều có màu vàng. Để dayay đèn trông đẹp nhất, Nam đã lập trình để điều khiển màu của các bóng đèn. Chương trình của Nam có $M$ dòng lệnh, mỗi dòng lệnh tương ứng với một lần gọi mã lệnh của dãy đèn. Vì số lượng bóng đèn quá lớn, sau khi lập trình xong, Nam muốn kiểm tra ngẫu nhiên màu của một số bóng đèn xem có đúng như ý tưởng ban đầu không. 
+
+\textbf{Yêu cầu:}
+Cho các số tự nhiên $X$ là tham số của $M$ dòng lệnh trong chương trình của Nam. Hãy lập trình để trả lời $Q$ câu hỏi tương ứng với các lần kiểm tra của Nam. Biết rằng mỗi câu hỏi chứa một số nguyên dương $P$ để xác định xem bóng đèn thứ $P$ trong dãy đèn có màu vàng hay đỏ.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm ba dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa bốn số nguyên dương $N, K, M, Q (1 \leq N \leq 10^9; 1 \leq M \leq 10^5; 1 \leq Q \leq 10^5; 0 \leq K \leq N)$ cách nhau một ký tự trắng.
+    \item Dòng 2: Chứa $M$ số nguyên dương $X_1, X_2, ... , X_M (1 \leq X_i \leq N; 1 \leq i \leq M)$ cách nhau một ký tự trắng.
+    \item Dòng 3: Chứa $Q$ số nguyên dương $P_1, P_2, ... , P_Q (1 \leq P_i \leq N; 1 \leq i \leq Q)$ cách nhau một ký tự trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm $Q$ dòng, dòng thứ $i$ trả lời câu hỏi thứ $i$. Nếu bóng đèn tại vị trí $P_i$ đang có màu vàng thì ghi ra ký tự \textbf{"V"}, ngược lại ghi ra ký tự \textbf{"D"}.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (60\%): $1 \leq N, M, Q \leq 10^3$;
+    \item Subtask 2 (20\%): $N, M \leq 10^5$;
+    \item Subtask 3 (20\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+7 2 4 1\\
+3 5
+2 7 4 5
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+D\\
+V\\
+V\\
+D
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+
+- Sau lần gọi mã lệnh thứ nhất, các bóng trong dãy đèn có màu là: V, D, D, D, V, V, V; 
+
+- Sau lần gọi mã lệnh thứ hai, các bóng trong dãy đèn có màu là: V, D, D, V, D, D, V;
+
+- Kết quả trả lời các câu hỏi lần lượt là: D, V, V, D.
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 4: Trò chơi}
+
+\textbf{Đề bài:}
+Cho một bảng hình vuông kích thước là $N \times N, N$ là số lẻ. Các hàng của bảng được đánh số từ $1$ tới $N$, từ trên xuống dưới, các cột của bảng được đánh số 
+từ $1$ tới $N$, từ trái sang phải. Ban đầu, các số từ $1$ đến $N^2$ được ghi vào bảng này lần lượt từ trái sang phải, từ trên xuống dưới. Khi $N = 5$ thì bảng vuông sẽ có dạng như hình sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Draw grid 5x5
+    \foreach \i in {1,...,6} {
+        \draw (1,-\i) -- (6,-\i); % horizontal lines
+        \draw (\i,-1) -- (\i,-6); % vertical lines
+    }
+    % Column numbers
+    \foreach \j in {1,...,5} {
+        \node at (\j+0.5,-0.5) {\textbf{\j}};
+    }
+    % Row numbers
+    \foreach \i in {1,...,5} {
+        \node at (0.5,-\i-0.5) {\textbf{\i}};
+    }
+    % Fill numbers
+    \foreach \i in {1,...,5} {
+        \foreach \j in {1,...,5} {
+            \pgfmathtruncatemacro{\num}{(\i-1)*5+\j}
+            \node at (\j+0.5,-\i-0.5) {\num};
+        }
+    }
+\end{tikzpicture}
+\end{center}
+
+Luật chơi: Có $Q$ luật chơi, mỗi lượt chơi quản trò sẽ cấp cho người chơi thông tin là ba số nguyên $P, X, Y ( 1 \leq P \leq N^2; 1 \leq X, Y \leq N)$. Người chơi 
+cần đưa số nguyên $P$ đến vị trí hàng $X$ cột $Y$ với số lần dịch bảng nhỏ nhất bằng cách sau:
+\begin{itemize}
+    \item Dịch các số trên hàng chứa số $P$ sang phải hoặc sang trái một ô theo vòng tròn cho đến khi số $P$ nằm trên cột $Y$;
+    \item Dịch các số trên cột $Y$ lên trên hoặc xuống dưới một ô theo vòng tròn cho đến khi số $P$ nằm trên hàng $X$.
+    \item Mỗi theo tác dịch hàng hoặc cột như trên được tính là một lần dịch bảng. Bảng đầu tiên của lượt chơi sau chính là bảng kết thúc của lượt chơi trước.
+\end{itemize}
+
+\textbf{Yêu cầu:}
+Cho thông tin của $Q$ lượt chơi. Hãy lập trình xác định số lần dịch bảng nhỏ nhất để đưa số $P$ đến vị trí hàng $X$ cột $Y$ trong mỗi lượt chơi.
+
+\textbf{Dữ liệu đầu vào:}
+Gồm $Q + 1$ dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $N, Q (1 \leq N \leq 30000; 1 \leq Q \leq 2000)$ cách nhau một ký tự trắng.
+    \item Dòng $i + 1 (1 \leq i \leq Q)$: Chứa ba số nguyên dương $P_i, X_i, Y_i (1 \leq P_i \leq N^2; 1 \leq X_i, Y_i \leq N)$ cách nhau một ký tự trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm $Q$ dòng, dòng thứ $i$ chứa một số nguyên là kết quả của lượt chơi thứ $i$.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (40\%): $1 \leq N < 100; 1 \leq Q \leq 100$;
+    \item Subtask 2 (40\%): $1 \leq N < 1500; 1 \leq Q \leq 1500$;
+    \item Subtask 3 (20\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5 3\\
+17 2 5\\
+5 4 2\\
+18 1 1
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+4\\
+2\\
+4
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+- Lượt chơi thứ nhất: Bảng ban đầu có dạng như hình trên. Để đưa số $17$ đến vị trí hàng $2$ cột $5$, ta có thể thực hiện các bước như hình sau:
+
+....
+
+%Để fix sau
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
+
+\subsection{Bài 5: Mua hàng}
+\textbf{Đề bài:}
+An đi mua $M$ sản phẩm khác nhau, các sản phẩm được đánh số từ $1$ đến $M$. Ở chợ có $N$ quầy hàng được xếp thành hàng ngang được đánh số từ $1$ đến $N$, từ trái sang phải. Quầy hàng thứ $i$ chỉ bán một loại sản phẩm duy nhất là $A_i (1 \leq A_i \leq M)$ và với mỗi sản phẩm trong $M$ sản phẩm luôn tồn tại ít nhất 
+một quầy hàng bán sản phẩm loại đó. Thời gian để An mua sản phậm tại quầy hàng thứ $i$ là $T_i$ phút. Thời gian để di chuyển giữa hai quầy hàng liền kề là $1$ phút.
+
+\textbf{Yêu cầu:}
+Tìm cách mua hàng sao cho:
+\begin{itemize}
+    \item An mua đủ $M$ sản phẩm theo đúng thứ tự từ $1$ đến $M$. Có thể bắt đầu từ một quầy hàng bất kì bán sản phẩm $1$;
+    \item Thời gian tính từ lúc bắt đầu mua sản phẩm $1$ đến khi mua xong sản phẩm $M$ là nhỏ nhất;
+\end{itemize}
+
+\textbf{Dữ liệu đầu vào:}
+Gồm ba dòng:
+\begin{itemize}
+    \item Dòng 1: Chứa hai số nguyên dương $N, M (1 \leq M \leq N \leq 10^5)$ cách nhau một ký tự trắng.
+    \item Dòng 2: Chứa $N$ số nguyên dương $A_1, A_2, ... , A_N (1 \leq A_i \leq M; 1 \leq i \leq N)$ cách nhau một ký tự trắng.
+    \item Dòng 3: Chứa $N$ số nguyên dương $T_1, T_2, ... , T_N (1 \leq T_i \leq 10^9; 1 \leq i \leq N)$ cách nhau một ký tự trắng.
+\end{itemize}
+
+\textbf{Dữ liệu đầu ra:}
+Gồm một dòng chứa một số nguyên là số phút nhỏ nhất để An mua $M$ sản phẩm.
+
+\textbf{Ràng buộc dữ liệu:}
+\begin{itemize}
+    \item Subtask 1 (10\%): $M = 1$;
+    \item Subtask 2 (30\%): $M = N$;
+    \item Subtask 3 (30\%): $N \leq 2000;$
+    \item Subtask 4 (30\%): Không có thêm ràng buộc nào.
+\end{itemize}
+
+\textbf{Ví dụ:}
+\begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
+5 2\\
+1 2 1 1 2\\
+5 10 6 8 3
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
+11
+\end{tcolorbox}
+
+\textbf{Giải thích:}
+Cách mua sao cho tổng số phút nhỏ nhất là:
+\begin{itemize}
+    \item Mua sản phẩm $1$ tại quầy hàng $3$ (tốn $6$ phút);
+    \item Di chuyển từ quầy hàng $3$ đến quầy hàng $5$ (tốn $2$ phút);
+    \item Mua sản phẩm $2$ tại quầy hàng $5$ (tốn $3$ phút).
+    \item Tổng thời gian là $6 + 2 + 3 = 11$ phút.
+\end{itemize}
+
+\textbf{Hướng dẫn giải:}
+
+\textbf{Solution C++:}
 
 \end{document}
 
