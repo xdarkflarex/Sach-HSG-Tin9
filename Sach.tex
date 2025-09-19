@@ -153,23 +153,84 @@ Gồm $T$ dòng, mỗi dòng in ra số tam giác đều tối thiểu cần thi
 \end{tcolorbox}
 
 \textbf{Hướng dẫn giải:}
+\begin{itemize}
+    \item \textbf{Kiến thức cần có:} Mảng cộng dồn, toán.
+    \item \textbf{Subtask 1:} Một hình lục giác đều có độ dài cạnh $n$ có thể được chia thành 6
+    tam giác đều lớn (mỗi tam giác có độ dài cạnh $n$). Mỗi tam giác đều lớn được
+    ghép từ $n^2$ tam giác đều nhỏ cạnh 1. Do đó, tổng số tam giác nhỏ để ghép một hình lục giác đều
+    cạnh $n$ là: $6 \times n^2$.
+    
+    Vậy kết quả là $6 \times 1^2 + 6 \times 2^2 + ... + 6 \times n^2$.
 
+    Với mỗi truy vấn, duyệt từ $1$ đến $n$ để tính tổng số tam giác đều của $n$ hình lục
+    giác đều.
+    \item \textbf{Subtask 2:} 
+    \begin{itemize}
+        \item \textbf{Cách 1:} Thay vì duyệt từ $1$ đến $n$ trong mỗi truy vấn, mình có thể
+        tính trước các trường hợp bằng mảng cộng dồn.
+        \item \textbf{Cách 2:} Kết quả bài toán là $6 \times 1^2 + 6 \times 2^2 + ... + 6 \times n^2
+        = (1^2 + 2^2 + ... + n^2) \times 6$.
+        
+        Ta có công thức tính $(1^2 + 2^2 + ... + n^2) = \frac{n(n + 1)(2n + 1)}{6}$.
+
+        Suy ra $(1^2 + 2^2 + ... + n^2) \times 6 = n(n + 1)(2n + 1)$.
+        
+        Vậy kết quả của mỗi truy vấn là $n(n + 1)(2n + 1)$.
+    \end{itemize}
+\end{itemize}
 
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
-    int T;
-    cin >> T;
-    while (T--) {
-        int n;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 2e6;
+
+ll t, n, f[N + 5];
+
+void sub1() {
+    while(t--) {
+        ll res = 0;
         cin >> n;
-        long long result = 3 * n * (n + 1);
-        cout << result << endl;
+        for(ll i = 1; i <= n; i++) {
+            res += (i * i) * 6;
+        }
+        cout << res << "\n";
     }
-    return 0;
 }
+
+void sub2() {
+    for(ll i = 1; i <= N; i++) {
+        f[i] = f[i - 1] + (i * i) * 6;
+    }
+    while(t--) {
+        cin >> n;
+        cout << f[n] << "\n";
+    }
+}
+
+void sub2_2() {
+    while(t--) {
+        cin >> n;
+        cout << n * (n + 1) * (2 * n + 1) << "\n";
+    }
+}
+
+int main() {
+    FASTIO;
+    cin >> t;
+    if(t <= 10 && n <= 1000) {
+        sub1();
+    } else {
+        sub2();
+        // sub2_2();
+    }
+}
+
 \end{lstlisting}
 
 \subsection{Bài 2: Chia phần}
@@ -210,33 +271,67 @@ Gồm một dòng duy nhất chứa giá trị nhỏ nhất của $|T_1 - T_2|$.
 \end{tcolorbox}
 
 \textbf{Hướng dẫn giải:}
-Dùng toán tử điều kiện hoặc hàm so sánh.
+\begin{itemize}
+    \item \textbf{Kiến thức cần có:} Toán.
+    \item \textbf{Subtask 1:} Với mỗi vị trí $i$ trong dãy, mình duyệt từ $i$ về $1$ để
+    tính $T_1$, duyệt từ $i + 1$ đến $n$ để tính $T_2$ và lấy min của $|T_1 - T_2|$ là đáp án bài toán.
+    \item \textbf{Subtask 2:}
+    
+    Với mỗi vị trí $i$ từ $1$ đến $n - 1$:
+    \begin{itemize}
+        \item Cộng $a_i$ vào $T_1$.
+        \item Trừ $a_i$ khỏi $T_2$.
+        \item Cập nhật min của $|T_1 - T_2|$.
+    \end{itemize}
+    
+    Với $T_2$ ban đầu là tổng của dãy $a$.
+\end{itemize}
 
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 2e6;
+
+ll n, a[N], f[N], res = 1e18, sum2 = 0, sum1 = 0;
+
+void sub1() {
+    for(ll i = 1; i <= n; i++) {
+        ll res1 = 0, res2 = 0;
+        for(ll j = i; j >= 1; j--) {
+            res1 += a[j];
+        }
+        for(ll j = i + 1; j <= n; j++) {
+            res2 += a[j];
+        }
+        res = min(res, abs(res1 - res2));
+    }
+    cout << res;
+}
+
+void sub2() {
+    for(ll i = 1; i < n; i++) {
+        sum1 += a[i];
+        sum2 -= a[i];
+        res = min(res, abs(sum1 - sum2));
+    }
+    cout << res;
+}
+
 int main() {
-    int n;
+    FASTIO;
     cin >> n;
-    long long a[n];
-    long long sum = 0;
-    for (int i = 0; i < n; i++) {
+    for(ll i = 1; i <= n; i++) {
         cin >> a[i];
-        sum += a[i];
+        sum2 += a[i];
     }
-    
-    long long min_diff = LLONG_MAX;
-    long long T1 = 0;
-    
-    for (int i = 0; i < n - 1; i++) {
-        T1 += a[i];
-        long long T2 = sum - T1;
-        min_diff = min(min_diff, abs(T1 - T2));
-    }
-    
-    cout << min_diff << endl;
-    return 0;
+    if(n <= 5000) sub1();
+    else sub2();
 }
 \end{lstlisting}
 
@@ -275,34 +370,45 @@ Gồm một số nguyên duy nhất là số lượng hình vuông nhiều nhấ
 \end{tcolorbox}
 
 \textbf{Hướng dẫn giải:}
-Kiểm tra $n$ chia hết cho 2 hay không.
+\begin{itemize}
+    \item \textbf{Kiến thức yêu cầu:} map.
+    \item \textbf{Subtask 3:} Để tạo thành một hình vuông thì cần $4$ đoạn thẳng
+    có độ dài bằng nhau. Nên chỉ cần tính tổng của $\frac{f(a_i)}{4}$ (với $f(x)$ là số lần xuất
+    hiện của $x$ trong dãy $a$). 
+\end{itemize}
 
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
-    int n;
-    cin >> n;
-    long long a[n];
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 2e6;
+
+ll n, a[N], mx, res;
+map<ll, ll> f;
+
+void sub3() {
+    for(pair<ll, ll> i : f) {
+        res += i.second / 4;
     }
-    
-    map<long long, int> count_map;
-    for (int i = 0; i < n; i++) {
-        count_map[a[i]]++;
-    }
-    
-    long long squares = 0;
-    for (auto& pair : count_map) {
-        squares += pair.second / 4;
-    }
-    
-    cout << squares << endl;
-    
-    return 0;
+    cout << res;
 }
+
+int main() {
+    FASTIO;
+    cin >> n;
+    for(ll i = 1; i <= n; i++) {
+        cin >> a[i];
+        f[a[i]]++;
+        mx = max(mx, a[i]);
+    }
+    if(n > 2000 && mx <= 1e18) sub3();
+}
+
 \end{lstlisting}
 
 \subsection{Bài 4: Tích lớn nhất}
