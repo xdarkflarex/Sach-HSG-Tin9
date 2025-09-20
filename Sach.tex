@@ -284,7 +284,7 @@ Gồm một dòng duy nhất chứa giá trị nhỏ nhất của $|T_1 - T_2|$.
         \item Cập nhật min của $|T_1 - T_2|$.
     \end{itemize}
     
-    Với $T_2$ ban đầu là tổng của dãy $a$.
+    Với $T_2$ ban đầu là tổng tất cả phần tử của dãy $a$.
 \end{itemize}
 
 \textbf{Solution C++:}
@@ -580,20 +580,31 @@ Gồm một dòng duy nhất số tiền thực tế khách hàng cần thanh to
 \begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
 1700000
 \end{tcolorbox}
-\textbf{Hướng dẫn giải:}
+\textbf{Hướng dẫn giải:} Tổng giá trị hoá đơn là $a \times b$ (với $a$ là số lượng hàng bán,
+$b$ là đơn giá mỗi mặt hàng).
+
+Nếu tổng giá trị hoá đơn lớn hơn $2000000$ thì kết quả bài toán là $(a \times b) - (a \times b \times 15$\%).
+
+Còn lại là $a \times b$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll a, b;
+
 int main() {
-    long long a, b;
+    FASTIO;
     cin >> a >> b;
-    long long total = a * b;
-    if (total >= 2000000) {
-        total -= total * 15 / 100; 
-    }
-    cout << total << endl;
-    return 0;
+    if(a * b >= 2000000) cout << (a * b) - (a * b * 15 / 100);
+    else cout << a * b;
 }
 \end{lstlisting}
 
@@ -632,30 +643,40 @@ In ra một số nguyên là số lượng cặp số $(i, j)$ thỏa mãn đi�
 \textbf{Giải thích:}
 Trong đoạn $[1, 5]$, các cặp số cùng nhau là: $(1, 2)$, $(1, 3)$, $(1, 4)$, $(1, 5)$, $(2, 3)$, $(2, 5)$, $(3, 4)$, $(3, 5)$ và $(4, 5)$. Tổng cộng có $9$ cặp.
 
-\textbf{Hướng dẫn giải:}
+\textbf{Hướng dẫn giải:} Chỉ cần duyệt lần lượt tất cả các cặp số trong dãy $a$ và kiểm tra
+nếu các cặp đó có ước chung lớn nhất là 1
 
-Sử dụng hàm Euler $\varphi(k)$ để đếm số lượng số nguyên nhỏ hơn $k$ và nguyên tố cùng nhau với $k$.
+Để tính ước chung lớn nhất, có thể dùng thuật toán Euclid.
 
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e6 + 5;
-int phi[N];
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll a, b, res;
+
+ll gcd(ll a, ll b) {
+    if(b == 0) return a;
+    return gcd(b, a % b);
+}
+
 int main() {
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n; i++) phi[i] = i;
-    for (int i = 2; i <= n; i++) {
-        if (phi[i] == i) {
-            for (int j = i; j <= n; j += i)
-                phi[j] -= phi[j] / i;
+    FASTIO;
+    cin >> a >> b;
+    for(ll i = a; i < b; i++) {
+        for(ll j = i + 1; j <= b; j++) {
+            if(gcd(i, j) == 1) {
+                res++;
+            }
         }
     }
-    long long res = 0;
-    for (int i = 2; i <= n; i++) res += phi[i];
-    cout << res << endl;
-    return 0;
+    cout << res;
 }
 \end{lstlisting}
 
@@ -698,36 +719,44 @@ Gồm hai dòng:
 2
 \end{tcolorbox}
 \textbf{Hướng dẫn giải:}
+\begin{itemize}
+    \item \textbf{Kiến thức cần có:} map.
+    \item Lấy giá trị nhỏ nhất và giá trị cao nhất trong dãy $a$.
+    
+    Đếm số lần xuất hiện của mỗi phần tử trong dãy và duyệt qua dãy để lấy số lần xuất hiện lớn nhất.
+\end{itemize}
+
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll n, a[N], mx = -1e18, mi = 1e18, res;
+map<ll, ll> f;
+
 int main() {
-    int n;
+    FASTIO;
     cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
+    for(ll i = 1; i <= n; i++) {
         cin >> a[i];
+        mx = max(mx, a[i]);
+        mi = min(mi, a[i]);
+        f[a[i]]++;
     }
-    
-    int min_income = *min_element(a.begin(), a.end());
-    int max_income = *max_element(a.begin(), a.end());
-    
-    unordered_map<int, int> freq;
-    for (int i = 0; i < n; i++) {
-        freq[a[i]]++;
+    for(pair<ll, ll> i : f) {
+        res = max(res, i.second);
     }
-    
-    int max_count = 0;
-    for (auto& pair : freq) {
-        max_count = max(max_count, pair.second);
-    }
-    
-    cout << min_income << " " << max_income << endl;
-    cout << max_count << endl;
-    
-    return 0;
+    cout << mi << " " << mx << "\n";
+    cout << res;
 }
+
 \end{lstlisting}
 
 \subsection{Bài 4: Đếm dãy con liên tiếp}

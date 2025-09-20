@@ -9,27 +9,27 @@
 \contentsline {subsection}{\numberline {2.1}Bài 1: Tính tiền}{12}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Bài 2: Số cùng nhau}{13}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Bài 3: Thu nhập}{14}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Bài 4: Đếm dãy con liên tiếp}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Bài 4: Đếm dãy con liên tiếp}{16}{subsection.2.4}%
 \contentsline {section}{\numberline {3}ĐỀ HSG 9 THCS TỈNH NGHỆ AN NĂM HỌC 2024-2025}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Bài 1: Số chính phương}{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Bài 2: Cây thông}{18}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Bài 3: Trồng cây}{20}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Bài 4: Giáng sinh}{22}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.2}Bài 2: Cây thông}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Bài 3: Trồng cây}{21}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Bài 4: Giáng sinh}{23}{subsection.3.4}%
 \contentsline {section}{\numberline {4}ĐỀ HSG 9 THCS TỈNH THANH HÓA NĂM HỌC 2024-2025}{25}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Bài 1: Diện tích}{25}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Bài 2: Số lớn}{26}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Bài 3: Hộp số}{27}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Bài 3: Hộp số}{28}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Bài 4: Bội số chung nhỏ nhất}{29}{subsection.4.4}%
 \contentsline {section}{\numberline {5}ĐỀ HSG 10 THCS TỈNH THÁI BÌNH NĂM HỌC 2024-2025}{30}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Bài 1: Số đặc biệt}{30}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Bài 2: Vườn cây}{32}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Bài 3: Dãy con thịnh vượng}{34}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Bài 4: Mã mặt hàng}{35}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Bài 4: Mã mặt hàng}{36}{subsection.5.4}%
 \contentsline {section}{\numberline {6}ĐỀ HSG 9 THCS TỈNH HÀ TĨNH 2024 - 2025}{37}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Bài 1: Số nguyên dương $k$}{37}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Bài 2: Nuôi cá cảnh}{38}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Bài 3: Số nguyên tố}{40}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Bài 4: Dãy con}{40}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.4}Bài 4: Dãy con}{41}{subsection.6.4}%
 \contentsline {section}{\numberline {7}ĐỀ HSG 9 THCS TỈNH VĨNH PHÚC 2024 - 2025}{41}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Bài 1: Quân Hậu}{41}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Bài 2: Trung vị lớn nhất}{43}{subsection.7.2}%
