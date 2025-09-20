@@ -164,10 +164,14 @@ Gồm $T$ dòng, mỗi dòng in ra số tam giác đều tối thiểu cần thi
 
     Với mỗi truy vấn, duyệt từ $1$ đến $n$ để tính tổng số tam giác đều của $n$ hình lục
     giác đều.
+
+    \textbf{Độ phức tạp:} $O(T \times n)$.
     \item \textbf{Subtask 2:} 
     \begin{itemize}
         \item \textbf{Cách 1:} Thay vì duyệt từ $1$ đến $n$ trong mỗi truy vấn, mình có thể
         tính trước các trường hợp bằng mảng cộng dồn.
+        
+        \textbf{Độ phức tạp:} $O(T + n)$.
         \item \textbf{Cách 2:} Kết quả bài toán là $6 \times 1^2 + 6 \times 2^2 + ... + 6 \times n^2
         = (1^2 + 2^2 + ... + n^2) \times 6$.
         
@@ -176,6 +180,8 @@ Gồm $T$ dòng, mỗi dòng in ra số tam giác đều tối thiểu cần thi
         Suy ra $(1^2 + 2^2 + ... + n^2) \times 6 = n(n + 1)(2n + 1)$.
         
         Vậy kết quả của mỗi truy vấn là $n(n + 1)(2n + 1)$.
+
+        \textbf{Độ phức tạp:} $O(T)$.
     \end{itemize}
 \end{itemize}
 
@@ -274,7 +280,11 @@ Gồm một dòng duy nhất chứa giá trị nhỏ nhất của $|T_1 - T_2|$.
 \begin{itemize}
     \item \textbf{Kiến thức cần có:} Toán.
     \item \textbf{Subtask 1:} Với mỗi vị trí $i$ trong dãy, mình duyệt từ $i$ về $1$ để
-    tính $T_1$, duyệt từ $i + 1$ đến $n$ để tính $T_2$ và lấy min của $|T_1 - T_2|$ là đáp án bài toán.
+    tính $T_1$.
+    
+    Duyệt từ $i + 1$ đến $n$ để tính $T_2$ và lấy giá trị nhỏ nhất của $|T_1 - T_2|$ là đáp án bài toán.
+
+    \textbf{Độ phức tạp:} $O(n^2)$.
     \item \textbf{Subtask 2:}
     
     Với mỗi vị trí $i$ từ $1$ đến $n - 1$:
@@ -285,6 +295,8 @@ Gồm một dòng duy nhất chứa giá trị nhỏ nhất của $|T_1 - T_2|$.
     \end{itemize}
     
     Với $T_2$ ban đầu là tổng tất cả phần tử của dãy $a$.
+
+    \textbf{Độ phức tạp:} $O(n)$.
 \end{itemize}
 
 \textbf{Solution C++:}
@@ -374,7 +386,9 @@ Gồm một số nguyên duy nhất là số lượng hình vuông nhiều nhấ
     \item \textbf{Kiến thức yêu cầu:} map.
     \item \textbf{Subtask 3:} Để tạo thành một hình vuông thì cần $4$ đoạn thẳng
     có độ dài bằng nhau. Nên chỉ cần tính tổng của $\frac{f(a_i)}{4}$ (với $f(x)$ là số lần xuất
-    hiện của $x$ trong dãy $a$). 
+    hiện của $x$ trong dãy $a$).
+
+    \textbf{Độ phức tạp:} $O(n)$.
 \end{itemize}
 
 \textbf{Solution C++:}
@@ -587,6 +601,8 @@ Nếu tổng giá trị hoá đơn lớn hơn $2000000$ thì kết quả bài to
 
 Còn lại là $a \times b$.
 
+\textbf{Độ phức tạp:} $O(1)$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
@@ -647,6 +663,8 @@ Trong đoạn $[1, 5]$, các cặp số cùng nhau là: $(1, 2)$, $(1, 3)$, $(1,
 nếu các cặp đó có ước chung lớn nhất là 1
 
 Để tính ước chung lớn nhất, có thể dùng thuật toán Euclid.
+
+\textbf{Độ phức tạp:} $O((b - a)^2 \log min(a, b))$.
 
 \textbf{Solution C++:}
 \begin{lstlisting}
@@ -723,7 +741,10 @@ Gồm hai dòng:
     \item \textbf{Kiến thức cần có:} map.
     \item Lấy giá trị nhỏ nhất và giá trị cao nhất trong dãy $a$.
     
+    
     Đếm số lần xuất hiện của mỗi phần tử trong dãy và duyệt qua dãy để lấy số lần xuất hiện lớn nhất.
+    
+    \textbf{Độ phức tạp:} $O(n)$.
 \end{itemize}
 
 
@@ -790,7 +811,7 @@ Gồm một số nguyên duy nhất là số dãy con liên tiếp thỏa mãn y
 \textbf{Ví dụ 1:}
 \begin{tcolorbox}[colback=gray!5!white, colframe=blue!50!black, title=Input]
 4 4\\
-5 - 1 8 -5
+5 -1 8 -5
 \end{tcolorbox}
 \begin{tcolorbox}[colback=gray!5!white, colframe=green!50!black, title=Output]
 6
@@ -885,25 +906,30 @@ Trong đoạn $[4, 30]$ có các số chính phương là: $4, 9, 16, 25$. Tổn
 
 \textbf{Hướng dẫn giải:}
 Sử dụng hàm căn bậc hai để tìm số lượng số chính phương trong đoạn $[L, R]$.
+
+\textbf{Độ phức tạp:} $O(1)$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll l, r;
+
 int main() {
-    long long L, R;
-    cin >> L >> R;
-    
-    long long left = ceil(sqrt(L));
-    long long right = floor(sqrt(R));
-    
-    if (left > right) {
-        cout << 0 << endl;
-    } else {
-        cout << right - left + 1 << endl;
-    }
-    
-    return 0;
+    FASTIO;
+    cin >> l >> r;
+
+    ll l2 = ceil(sqrt(l)), r2 = floor(sqrt(r));
+    cout << r2 - l2 + 1 << endl;
 }
+
 \end{lstlisting}
 
 \subsection{Bài 2: Cây thông}
@@ -974,45 +1000,78 @@ Trong ví dụ trên, ta có các cặp thẻ $A_i$ và $B_j$ như sau:
 Từ các cặp trên, ta thấy rằng giá trị nhỏ nhất của $|A_i + B_j|$ là $2$, với các cặp $(A_2, B_1)$ và $(A_4, B_2)$.
 
 \textbf{Hướng dẫn giải:}
-Sắp xếp hai mảng $A$ và $B$, sau đó sử dụng hai con trỏ để tìm cặp thẻ có tổng gần bằng $0$ nhất.
+\begin{itemize}
+    \item \textbf{Kiến thức cần có:} Hai con trỏ.
+    \item \textbf{Subtask 1:} Duyệt qua lần lượt các cặp số $(A_i, B_j)$ và lấy giá trị nhỏ
+    nhất của $|A_i + B_j|$.
+
+    \textbf{Độ phức tạp:} $O(n^2)$.
+    \item \textbf{Subtask 2:} Sắp xếp hai mảng $A$ và $B$, sau đó sử dụng hai con trỏ
+    để tìm cặp thẻ có tổng gần bằng $0$ nhất.
+
+    Nếu tổng nhỏ hơn $0$ thì tăng vị trí đang xét trong $A$ lên.
+    
+    Ngược lại giảm vị trí đang xét trong $B$ xuống.
+
+    Và lấy $|A_i + B_j|$ nhỏ nhất khi đang xét.
+
+    \textbf{Độ phức tạp:} $O(n \log n)$.
+\end{itemize}
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
-    int n;
-    cin >> n;
-    vector<long long> A(n), B(n);
-    
-    for (int i = 0; i < n; i++) {
-        cin >> A[i];
-    }
-    
-    for (int i = 0; i < n; i++) {
-        cin >> B[i];
-    }
-    
-    sort(A.begin(), A.end());
-    sort(B.begin(), B.end());
-    
-    long long min_sum = LLONG_MAX;
-    int i = 0, j = n - 1;
-    
-    while (i < n && j >= 0) {
-        long long sum = A[i] + B[j];
-        min_sum = min(min_sum, abs(sum));
-        
-        if (sum < 0) {
-            i++;
-        } else {
-            j--;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll n, a[N], b[N], res = 1e18;
+
+void sub1() {
+    for(ll i = 1; i <= n; i++) {
+        for(ll j = 1; j <= n; j++) {
+            res = min(res, abs(a[i] + b[j]));
         }
     }
-    
-    cout << min_sum << endl;
-    
-    return 0;
+    cout << res;
 }
+
+void sub2() {
+    sort(a + 1, a + n + 1);
+    sort(b + 1, b + n + 1);
+    ll i = 1, j = n;
+    while(i <= n && j >= 1) {
+        ll sum = a[i] + b[j];
+        res = min(res, abs(sum));
+        if(sum < 0) {
+            i++;
+        } else if(sum > 0) {
+            j--;
+        } else {
+            break;
+        }
+    }
+    cout << res;
+}
+
+int main() {
+    FASTIO;
+    cin >> n;
+    for(ll i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    for(ll i = 1; i <= n; i++) {
+        cin >> b[i];
+    }
+    if(n <= 1000) sub1();
+    else sub2();
+}
+
+
 \end{lstlisting}
 
 \subsection{Bài 3: Trồng cây}
