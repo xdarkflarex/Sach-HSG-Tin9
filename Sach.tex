@@ -1621,39 +1621,57 @@ NO
 Số $17$ có tổng các chữ số là $1 + 7 = 8$, mà $8$ không phải là một số nguyên tố.
 
 \textbf{Hướng dẫn giải:}
-Để giải bài toán này, ta cần thực hiện các bước sau:
-\begin{itemize}
-    \item Tính tổng các chữ số của số $N$.
-    \item Kiểm tra xem tổng đó có phải là một số nguyên tố hay không.
-\end{itemize}
+
+Vì $N$ có thể lớn đến $10^{255}$ nên kiểu dữ liệu long long sẽ không thể đáp ứng đủ,
+vì vậy có thể dùng string để nhập số.
+
+Duyệt qua từng chữ số, tính tổng chữ số của $N$. Sau đó, kiểm tra tổng chữ số của $N$ có phải là số nguyên tố không.
+
+Để kiểm tra số nguyên tố, mình có thể duyệt đến $\sqrt{x}$ (với $x$ là số cần kiểm tra).
+
+$n$ có thể được viết dưới dạng $n = a \times b$, nếu cả $a$ và $b$ đều lớn hơn $\sqrt{x}$,
+thì $a \times b > \sqrt{n} \times \sqrt{n} = n$.
+
+Vì vậy, sẽ có ít nhất $1$ ước của $x$ nhỏ hơn $\sqrt{x}$, nên chỉ cần duyệt đến $\sqrt{x}$
+để kiểm tra số nguyên tố.
+
+\textbf{Độ phức tạp:} $O(n\sqrt{n})$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
-bool is_prime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0) return false;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll sum;
+string s;
+
+bool check(ll n) {
+    if(n == 1) return false;
+    for(ll i = 2; i * i <= n; i++) {
+        if(n % i == 0) return false;
     }
     return true;
 }
+
 int main() {
-    string N;
-    cin >> N;
-
-    int sum = 0;
-    for (char c : N) {
-        sum += c - '0'; 
+    FASTIO;
+    cin >> s;
+    for(ll i = 0; i < s.size(); i++) {
+        sum += s[i] - '0';
     }
-
-    if (is_prime(sum)) {
-        cout << "YES" << endl;
+    if(check(sum)) {
+        cout << "YES";
     } else {
-        cout << "NO" << endl;
+        cout << "NO";
     }
-
-    return 0;
 }
+
 \end{lstlisting}
 
 \subsection{Bài 2: Vườn cây}
@@ -1703,49 +1721,55 @@ Trong ví dụ trên, ta có:
 \end{itemize}
 
 \textbf{Hướng dẫn giải:}
-Để giải bài toán này, ta cần thực hiện các bước sau:
-\begin{itemize}
-    \item Đọc dữ liệu đầu vào để lấy số hàng $M$ và số cột $N$.
-    \item Khởi tạo một mảng để lưu trữ tổng sản lượng trái cây của từng cột.
-    \item Duyệt qua từng ô trong mảng vườn, cộng giá trị của ô đó vào tổng tương ứng của cột.
-    \item In ra kết quả.
-\end{itemize}
+
+Mình có thể sử dụng mảng $2$ chiều để lưu các sản lượng quả.
+
+Gọi $f(i)$ là tổng sản lượng trái cây của các cây trên hàng dọc thứ $i$.
+
+Duyệt lần lượt qua các sản lượng quả, với mỗi $a_{ij}$ ta sẽ có công thức sau:
+$f(i) += a_{ji}$ (với $i$ là thứ tự cột, $j$ là thứ tự hàng).
+
+Chỉ cần duyệt và lần lượt in ra các $f_i$(với $i$ là thứ tự cột).
+
+\textbf{Độ phức tạp:} $O(n \times m)$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll n, m, dp[10004], fakedp[10004], a[10004][10004];
+
 int main() {
-    int M, N;
-    cin >> M >> N;
-
-    vector<vector<int>> garden(M, vector<int>(N));
-    for (int i = 0; i < M; i++) {
-        for (int j = 0; j < N; j++) {
-            cin >> garden[i][j];
+    FASTIO;
+    cin >> m >> n;
+    for(ll i = 1; i <= m; i++) {
+        for(ll j = 1; j <= n; j++) {
+            cin >> a[i][j];
         }
     }
-
-    vector<int> col_sum(N, 0);
-    for (int j = 0; j < N; j++) {
-        for (int i = 0; i < M; i++) {
-            col_sum[j] += garden[i][j];
+    for(ll i = 1; i <= n; i++) {
+        for(ll j = 1; j <= m; j++) {
+            fakedp[i] += a[j][i];
         }
     }
-
-    for (int j = 0; j < N; j++) {
-        cout << col_sum[j] << " ";
+    for(ll i = 1; i <= n; i++) {
+        cout << fakedp[i] << " ";
     }
-    cout << endl;
-
-    return 0;
 }
+
 \end{lstlisting}
 
 \subsection{Bài 3: Dãy con thịnh vượng}
 Xét dãy số gồm $n$ phần tử $a_1, a_2, \ldots, a_n$. Một dãy con liên tiếp của dãy $a_1, a_2, \ldots, a_n$ là dãy số nguyên có dạng $a_i, a_{i+1}, \ldots, a_j$ với $1 \leq i \leq j \leq n$.
 
-Một dãy con liên tiếp được gọi là thịnh vượng nếu tổng các phần tử của nó là một số nguyên dương.Một dãy con liên tiếp được gọi là dãy con thịnh vượng nếu tổng của các phần tử trong dãy con liên tiếp đó là lớn nhất trong tất cả các dãy con liên tiếp.
+Một dãy con liên tiếp được gọi là thịnh vượng nếu tổng các phần tử của nó là một số nguyên dương. Một dãy con liên tiếp được gọi là dãy con thịnh vượng nếu tổng của các phần tử trong dãy con liên tiếp đó là lớn nhất trong tất cả các dãy con liên tiếp.
 
 \textbf{Yêu cầu:}
 Cho trước một dãy số nguyên $a_1, a_2, \ldots, a_n$. Hãy tìm tổng của một dãy con thịnh vượng của dãy đã cho. 
@@ -1796,34 +1820,108 @@ Gồm một số nguyên duy nhất là tổng của dãy con thịnh vượng l
 \end{tcolorbox}
 
 \textbf{Hướng dẫn giải:}
-Để giải bài toán này, ta có thể sử dụng thuật toán Kadane để tìm dãy con thịnh vượng lớn nhất. Thuật toán này sẽ duyệt qua từng phần tử của dãy và tính tổng của dãy con thịnh vượng hiện tại, đồng thời cập nhật tổng lớn nhất nếu cần.
+
+\begin{itemize}
+    \item \textbf{Kiến thức cần có}: Quy hoạch động cơ bản, mảng cộng dồn.
+    \item \textbf{Subtask 1 + 2:}
+    
+    Duyệt qua từng phần tử, với mỗi vị trí $i$, mình chạy
+    thêm một vòng lặp đến cuối dãy, để xét tất cả dãy liên tiếp có phần tử đầu tiên là $a_i$.
+
+    Khi xét các dãy liên tiếp, mình sẽ lấy giá trị lớn nhất của tổng các phần tử trong dãy là
+    kết quả bài toán.
+    
+    \textbf{Độ phức tạp:} $O(n^2)$.
+    \item \textbf{Subtask 3:}
+    \begin{itemize}
+        \item \textbf{Cách 1:} Quy hoạch động.
+        
+        Gọi dp$[i]$ là tổng lớn nhất trong các dãy con liên tiếp kết thúc ở vị trí $i$.
+
+        Với mỗi $a_i$, mình sẽ có thể thêm $a_i$ vào dãy trước đó để tính tổng lớn nhất các dãy liên tiếp kết
+        thúc ở vị trí $i$.
+
+        Hoặc tạo thành một dãy mới bắt đầu và kết thúc ở vị trí $i$.
+
+        Nên mình sẽ lấy giá trị lớn nhất của hai trường hợp trên.
+
+        Từ đó, mình có công thức truy hồi là: dp$[i]$ = max(dp$[i - 1]$ + a$[i]$, a$[i]$).
+
+        Kết quả bài toán là giá trị lớn nhất của dp$[i]$ $(1 \leq i \leq n)$.
+
+        \textbf{Độ phức tạp:} $O(n)$.
+
+        \item \textbf{Cách 2:} Mảng cộng dồn.
+        
+        Mình sẽ dùng mảng cộng dồn, tổng dãy con từ $L$ đến $R$ là pre$[R]$ - pre$[L - 1]$.
+
+        Để dãy con liên tiếp có tổng lớn nhất thì pre$[L - 1]$ là nhỏ nhất.
+
+        Vì vậy, mình có thể xây dựng mảng min, với mi$[i]$ là giá trị nhỏ nhất của
+        pre$[j]$ $($với $1 \leq j \leq i)$.
+
+        mi$[i]$ = min(mi$[i - 1]$, pre$[i]$).
+
+        Vậy mình chỉ cần lấy giá trị lớn nhất của pre$[i]$ - mi$[i - 1]$ $($với $1 \leq i \leq n)$
+        
+        \textbf{Độ phức tạp:} $O(n)$.
+
+    \end{itemize}
+\end{itemize}
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
 
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
+const ll M = 1e9 + 7;
+const ll N = 2e6;
 
-    int max_sum = 0, current_sum = 0;
-    for (int i = 0; i < n; i++) {
-        current_sum += a[i];
-        if (current_sum < 0) {
-            current_sum = 0;
+ll n, a[N], ans = -1e18, dp[N], pre[N], mi[N];
+
+void sub1_2() {
+    for(ll i = 1; i <= n; i++) {
+        ll res = 0;
+        for(ll j = i; j <= n; j++) {
+            res += a[j];
+            ans = max(ans, res);
         }
-        max_sum = max(max_sum, current_sum);
     }
-
-    cout << max_sum << endl;
-
-    return 0;
+    cout << ans;
 }
+
+void sub3_1() {
+    for(ll i = 1; i <= n; i++) {
+        dp[i] = max(dp[i - 1] + a[i], a[i]);
+        ans = max(ans, dp[i]);
+    }
+    cout << ans;
+}
+
+void sub3_2() {
+    for(ll i = 1; i <= n; i++) {
+        ans = max(ans, pre[i] - mi[i - 1]);
+    }
+    cout << ans;
+}
+
+int main() {
+    FASTIO;
+    cin >> n;
+    for(ll i = 1; i <= n; i++) {
+        cin >> a[i];
+        pre[i] = pre[i - 1] + a[i];
+        mi[i] = min(mi[i - 1], pre[i]);
+    }
+    if(n <= 5000) sub1_2();
+    else {
+        sub3_1();
+        sub3_2();
+    }
+}
+
 \end{lstlisting}
 
 \subsection{Bài 4: Mã mặt hàng}
