@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758643616.20739 "c:/Users/THAI/Desktop/testing/Sach-HSG-Tin9/Sach.tex" "Sach.pdf" "Sach" 1758643620.37372 0
+["pdflatex"] 1759420708.59267 "c:/Users/THAI/Desktop/testing/Sach-HSG-Tin9/Sach.tex" "Sach.pdf" "Sach" 1759420712.66263 0
   "C:/Users/THAI/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1755598202 88371 b965f57369ed322039596060d18f4416 ""
   "C:/Users/THAI/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1755598207 14064 3e0a4eaca3becbd8dda35d304a93105a ""
   "C:/Users/THAI/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt1095.pk" 1755598206 10392 fe94f2a9da0d98c77c19021517f4bd20 ""
@@ -33,6 +33,7 @@
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb" 1644004041 41089 cd085a6112214f1ec9535fe0d1ee127f ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnitt10.pfb" 1644004041 43956 90692cd137ee3264107603c8b3941b93 ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb" 1644004041 41608 f55c1a79be39d4e7ed224ba660d7353d ""
@@ -195,10 +196,10 @@
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/tex/latex/vntex/t5enc.def" 1368738347 21986 ccb3b8f7cc27fbd61b3daabbbb82ad3f ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/tex/latex/vntex/t5enc.dfu" 1368738347 13949 387dd4fa58aea5f873839c93430fffed ""
   "C:/Users/THAI/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Sach.aux" 1758643620 38601 421dee2ecbbf326a0916ad3752dde136 "pdflatex"
-  "Sach.tex" 1758643611 168143 dbb6925b0f654e245b5c838027f83c3c ""
-  "Sach.toc" 1758643620 7300 66504d76a1f382f6276f62d221217295 "pdflatex"
-  "c:/Users/THAI/Desktop/testing/Sach-HSG-Tin9/Sach.tex" 1758643611 168143 dbb6925b0f654e245b5c838027f83c3c ""
+  "Sach.aux" 1759420712 38601 f40d7a959ce9eed38d648682581862a2 "pdflatex"
+  "Sach.tex" 1759420703 176905 1c13052b38a36dff544f716d854d2afe ""
+  "Sach.toc" 1759420712 7300 4d2ab80bfa74c7321e9d6cba37d75cc1 "pdflatex"
+  "c:/Users/THAI/Desktop/testing/Sach-HSG-Tin9/Sach.tex" 1759420703 176905 1c13052b38a36dff544f716d854d2afe ""
   (generated)
   "Sach.aux"
   "Sach.log"
