@@ -522,6 +522,7 @@ Gồm một số nguyên duy nhất là số lượng cặp $(i, j)$ thỏa mãn
 4  
 \end{tcolorbox}
 \textbf{Hướng dẫn giải:}
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
@@ -915,20 +916,18 @@ Sử dụng hàm căn bậc hai để tìm số lượng số chính phương tr
 using namespace std;
 
 typedef long long ll;
-#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
-
-const ll M = 1e9 + 7;
-const ll N = 1e7;
-
-ll l, r;
+#define FASTIO ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 
 int main() {
     FASTIO;
+    ll l, r;
     cin >> l >> r;
+    long double sl = sqrt((long double)l), sr = sqrt((long double)r);
+    ll l2 = ceil(sl - 1e-12), r2 = floor(sr + 1e-12);
 
-    ll l2 = ceil(sqrt(l)), r2 = floor(sqrt(r));
-    cout << r2 - l2 + 1 << endl;
+    cout << max(0LL, r2 - l2 + 1) << '\n';
 }
+
 
 \end{lstlisting}
 
@@ -1722,14 +1721,16 @@ Trong ví dụ trên, ta có:
 
 \textbf{Hướng dẫn giải:}
 
-Mình có thể sử dụng mảng $2$ chiều để lưu các sản lượng quả.
+Vì $n$ và $m$ có thể lên đến $10^4$ nên mình không thể lưu các giá trị bằng mảng $2$ chiều.
 
-Gọi $f(i)$ là tổng sản lượng trái cây của các cây trên hàng dọc thứ $i$.
+Thay vì dùng mảng $2$ chiều, mình có thể sử dụng một biến riêng lẻ để nhập đầu vào.
 
-Duyệt lần lượt qua các sản lượng quả, với mỗi $a_{ij}$ ta sẽ có công thức sau:
-$f(i) += a_{ji}$ (với $i$ là thứ tự cột, $j$ là thứ tự hàng).
+Gọi fakedp$[i]$ là tổng các giá trị trong cột $i$. Vì không dùng mảng $2$ chiều nên khi chạy vòng lặp
+để nhập giá trị thì mình có thể dựa vào giá trị vòng lặp là cột để cộng vào.
 
-Chỉ cần duyệt và lần lượt in ra các $f_i$(với $i$ là thứ tự cột).
+Ví dụ, mình đang nhập giá trị ở cột 1 thì giá trị được nhập sẽ cộng vào fakedp$[1]$.
+
+Nhập giá trị ở cột $j$ thì giá trị được nhập sẽ cộng vào fakedp$[j]$ $(1 \leq j \leq n)$.
 
 \textbf{Độ phức tạp:} $O(n \times m)$.
 
@@ -1744,22 +1745,19 @@ typedef long long ll;
 const ll M = 1e9 + 7;
 const ll N = 1e7;
 
-ll n, m, dp[10004], fakedp[10004], a[10004][10004];
+int n, m;
+ll f, fakedp[10004];
 
 int main() {
     FASTIO;
     cin >> m >> n;
-    for(ll i = 1; i <= m; i++) {
-        for(ll j = 1; j <= n; j++) {
-            cin >> a[i][j];
+    for(int i = 1; i <= m; i++) {
+        for(int j = 1; j <= n; j++) {
+            cin >> f;
+            fakedp[j] += f;
         }
     }
-    for(ll i = 1; i <= n; i++) {
-        for(ll j = 1; j <= m; j++) {
-            fakedp[i] += a[j][i];
-        }
-    }
-    for(ll i = 1; i <= n; i++) {
+    for(int i = 1; i <= n; i++) {
         cout << fakedp[i] << " ";
     }
 }
@@ -1917,7 +1915,7 @@ int main() {
     }
     if(n <= 5000) sub1_2();
     else {
-        sub3_1();
+        // sub3_1();
         sub3_2();
     }
 }
@@ -2096,6 +2094,8 @@ Với $n = 6$ thì giá trị $k = 3$ là lớn nhất thỏa mãn $1 + 2 + 3 \l
     Ta có thể tính tổng $1 + 2 + 3 + ... + k$ bằng công thức $\frac{k \times (k + 1)}{2} \leq n$,
     mình cần tìm $k$ sao cho tổng này không vượt quá $n$.
 
+    Ta thấy, khi $k$ tăng thì $1 + 2 + 3 + ... + k$ cũng tăng, vì vậy ta có thể dùng tìm kiếm nhị phân.
+
     Với phạm vi tìm kiếm là từ $1$ đến $2 \times 10^{9}$, nếu $\frac{k \times (k + 1)}{2}$ nhỏ hơn hoặc bằng
     $n$, ta sẽ tăng $k$ để tìm giá trị $k$ lớn nhất mà thoả mãn điều kiện trên.
         
@@ -2120,7 +2120,7 @@ const ll N = 1e7;
 ll n;
 
 void sub1() {
-    for(ll i = 1; i <= n; i++) {
+    for(ll i = 1; ; i++) {
         if(i * (i + 1) / 2 > n) {
             cout << i - 1;
             return;
@@ -2469,7 +2469,7 @@ const ll M = 1e9 + 7;
 const ll N = 1e6;
 
 ll n, m, a[N + 10], check = 1, lol;
-map<ll, ll> f;
+vector<ll> f(N + 10, 0);
 
 void sub1() {
     for(ll i = 1; i <= n; i++) {
@@ -3220,7 +3220,41 @@ IKLMNOPQRSTUVWXYZ
 
 \textbf{Hướng dẫn giải:}
 
+Với mỗi kí tự trong xâu, mình sẽ đánh dấu là kí tự đó đã xuất hiện trong xâu.
+
+Sau đó duyệt lần lượt các kí tự trong bảng chữ cái từ 'A' đến 'Z', nếu kí tự đang duyệt chưa được đánh dấu
+thì in ra kí tự đó.
+
+\textbf{Độ phức tạp:} $O(n)$.
+
 \textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+string s;
+ll f[300];
+
+int main() {
+    FASTIO;
+    cin >> s;
+    for(ll i = 0; i < s.size(); i++) {
+        f[s[i]] = 1; 
+    }
+    for(ll i = 'A'; i <= 'Z'; i++) {
+        if(f[i] == 0) {
+            cout << (char)i;
+        }
+    }
+}
+
+\end{lstlisting}
 
 \subsection{Bài 2: Số tròn chục}
 \textbf{Đề bài:}
@@ -3251,7 +3285,35 @@ nhỏ hơn 31 là: 10, 20, 30
 
 \textbf{Hướng dẫn giải:}
 
+Số lượng số tròn chục nhỏ hơn hoặc bằng $L$ là $\frac{L}{10}$.
+
+Số lượng số tròn chục nhỏ hơn $R$ là $\frac{R - 1}{10}$.
+
+Suy ra số lượng số tròn chục lớn hơn $L$ và nhỏ hơn $R$ là $\frac{R - 1}{10} - \frac{L}{10}$.
+
+\textbf{Độ phức tạp:} $O(1)$.
+
 \textbf{Solution C++:}
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll l, r;
+
+int main() {
+    FASTIO;
+    cin >> l;
+    cin >> r;
+    cout << (r - 1) / 10 - l / 10;
+}
+
+\end{lstlisting}
 
 \subsection{Bài 3: Tổng liên tiếp}
 \textbf{Đề bài:}
@@ -3298,6 +3360,16 @@ từ số xuất hiện thứ $3$ là $6$ $2$ $9$ $5$ $4$ $3$ $6$.
 Kết quả: $(6 + 2 + 9 + 5 + 4 + 3 + 6)$ \% $(10^9 + 7) = 35$
 
 \textbf{Hướng dẫn giải:}
+
+\begin{itemize}
+    \item \textbf{Kiến thức cần có:} Mảng cộng dồn.
+    \item \textbf{Subtask 1:}
+    
+    Với giới hạn nhỏ như vậy, mình có thể duyệt từ $p$ cho đến $k$ và cộng vào
+    đáp án vi $k \leq n$.
+    
+    \textbf{x}
+\end{itemize}
 
 \textbf{Solution C++:}
 
@@ -3351,26 +3423,29 @@ số chiến binh có trong quân đội là 170.
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
+
 typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll n, k, dp[100005], lol, lol2;
+
 int main() {
-    int n;
-    ll S;
-    cin >> n >> S;
-    vector<ll> a(n+1, 0), prefix(n+1, 0);
-    for (int i = 1; i <= n; ++i) {
-        cin >> a[i];
-        prefix[i] = prefix[i-1] + a[i];
+    FASTIO;
+    cin >> n;
+    cin >> k;
+    dp[0] = n;
+    lol = n;
+    for(ll i = 1; i <= k; i++) {
+        lol2 += dp[i - 1] % M;
+        lol += lol2 % M;
+        dp[i] = lol % M;
     }
-    ll res = 0;
-    for (int l = 1; l <= n; ++l) {
-        for (int r = l; r <= n; ++r) {
-            ll sum = prefix[r] - prefix[l-1];
-            if (abs(sum) > S) res++;
-        }
-    }
-    cout << res << endl;
-    return 0;
+    cout << dp[k] % M;
 }
+
 \end{lstlisting}
 
 \section{ĐỀ HSG 9 THCS TỈNH QUẢNG NINH 2024 - 2025}
@@ -3936,7 +4011,7 @@ Hãy cho biết có bao nhiêu cách chọn các cặp số $i$ và $j$ thỏa m
 Gồm hai dòng:
 \begin{itemize}
     \item Dòng 1: Chứa hai số nguyên dương $n$ và $k (1 < n, k < 10^6)$ mỗi số cách nhau một khoảng trắng.
-    \item Dòng 2: Chứa $n$ số nguyên $a_1, a_2, ... , a_n (\| a_i \| < 10^9; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng.
+    \item Dòng 2: Chứa $n$ số nguyên $a_1, a_2, ... , a_n (| a_i | < 10^9; 1 \leq i \leq n)$, mỗi số cách nhau một khoảng trắng.
 \end{itemize}
 
 \textbf{Dữ liệu đầu ra:}
