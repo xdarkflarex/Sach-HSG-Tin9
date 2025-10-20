@@ -1328,24 +1328,55 @@ Gồm một số nguyên duy nhất là diện tích lớn nhất của khung h�
 25
 \end{tcolorbox}
 \textbf{Hướng dẫn giải:}
+
+Để tạo thành một khung hình chữ nhật thì mình cần hai cặp
+thanh sắt, với hai thanh sắt trong một cặp có độ dài bằng nhau.
+
+Vì bài toán yêu cầu tìm khung hình chữ nhật được tạo thành từ
+$4$ thanh sắt mà có diện tích lớn nhất. Nên mình chỉ cần tìm
+hai cặp thanh sắt có với hai thanh sắt trong mỗi cặp bằng nhau và
+có độ dài lớn nhất.
+
+Mình có thể sắp xếp lại $4$ số, cặp số có độ dài lớn nhất có thể
+tạo thành bằng cách cắt thanh sắt lớn nhất thành thanh sắt khác
+mà lớn hơn $2$ thanh sắt còn lại mà nhỏ hơn thanh sắt lớn nhất.
+
+Cặp số có độ dài nhỏ hơn còn lại thì được tạo thành bằng cách cắt
+thanh sắt nhỏ thứ $2$ thành thanh sắt nhỏ nhất.
+
+Ví dụ: $1$ $2$ $3$ $4$
+
+Mình có thể cắt thanh sắt lớn nhất là $4$ thành thanh sắt lớn
+hơn hai thanh còn lại nhưng nhỏ hơn nó là thanh $3$, mình
+sẽ được cặp thanh sắt đầu tiên là $3$ $3$.
+
+Với cặp tiếp theo, mình có thể cắt thanh sắt nhỏ thứ $2$ trong dãy
+là thanh có độ dài $2$ thành
+thanh sắt nhỏ thứ nhất là thanh có độ dài $1$, mình sẽ được
+cặp thanh sắt thứ hai là $1$ $1$.
+
+Đáp án bài toán là diện tích hình chữ nhật: $1 \times 3$.
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll a[6];
+
 int main() {
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-
-    int max_area = 0;
-    for (int w = 1; w <= 100000; w++) {
-        int h = min({a / w, b / w, c / w, d / w});
-        max_area = max(max_area, w * h);
-    }
-
-    cout << max_area << endl;
-    return 0;
+    FASTIO;
+    cin >> a[1] >> a[2] >> a[3] >> a[4];
+    sort(a + 1, a + 5);
+    cout << a[1] * a[3];
 }
+
 \end{lstlisting}
 
 \subsection{Bài 2: Số lớn}
@@ -3365,13 +3396,76 @@ Kết quả: $(6 + 2 + 9 + 5 + 4 + 3 + 6)$ \% $(10^9 + 7) = 35$
     \item \textbf{Kiến thức cần có:} Mảng cộng dồn.
     \item \textbf{Subtask 1:}
     
-    Với giới hạn nhỏ như vậy, mình có thể duyệt từ $p$ cho đến $k$ và cộng vào
-    đáp án vi $k \leq n$.
-    
-    \textbf{x}
+    Vì $k \leq n$ và $p = 1$ nên đoạn cần tính ở vị trí từ $1$ đến $n$.
+
+    Đáp án bài toán là $a_1 + a_2 + ... + a_k$.
+
+    Vì thế nên minh chỉ cần duyệt từ vị trí $1$ đến $k$ và cộng các giá trị vào kết quả.
+
+    \item \textbf{Subtask 2:}
 \end{itemize}
 
 \textbf{Solution C++:}
+
+\begin{lstlisting}
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+#define FASTIO ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
+
+const ll M = 1e9 + 7;
+const ll N = 1e7;
+
+ll n, k, p, a[1000006], f[1000006];
+
+void sub1() {
+    ll res = 0;
+    for(ll i = 1; i <= k; i++) res += a[i];
+    cout << res;
+}
+
+void sub2() {
+    ll d = 0, res = 0;
+    ll vt = p;
+    while(d != k) {
+        if(vt > n) vt = 1;
+        res += a[vt] % M;
+        res %= M;
+        vt++;
+        d++;
+    }
+    cout << res;
+}
+
+void sub3() {
+    if(k <= (n - p + 1)) {
+        cout << f[p + k - 1] - f[p - 1];
+        return;
+    }
+    ll dau = (f[n] - f[p - 1]) % M;
+    ll giua = ((f[n] % M) * (((k - (n - p + 1)) / n) % M)) % M;
+    ll cuoi = f[(k - (n - p + 1)) % n] % M;
+    cout << (dau % M + giua % M + cuoi % M + M) % M;
+}
+
+int main() {
+    FASTIO;
+    cin >> n >> k >> p;
+    for(ll i = 1; i <= n; i++) {
+        cin >> a[i];
+        f[i] = f[i - 1] + a[i];
+    }
+    if(p % n == 0) p = n;
+    else p = p % n;
+
+    if(n <= 1000 && p == 1 && k <= n) {
+        sub1();
+    } else if(n <= 1000 && p <= 1e6 && k <= 1e6) {
+        sub2();
+    } else sub3();
+}
+\end{lstlisting}
 
 \subsection{Bài 4: Chiến Binh}
 
@@ -3419,6 +3513,13 @@ số chiến binh có trong quân đội là 170.
 
 \textbf{Hướng dẫn giải:}
 
+\begin{itemize}
+    \item \textbf{Subtask 2:}
+    
+    Sau ngày $1$, đội quân đã huấn luyện được thêm $n$
+
+\end{itemize}
+
 \textbf{Solution C++:}
 \begin{lstlisting}
 #include <bits/stdc++.h>
@@ -3430,21 +3531,20 @@ typedef long long ll;
 const ll M = 1e9 + 7;
 const ll N = 1e7;
 
-ll n, k, dp[100005], lol, lol2;
+ll n, k, lol, last;
 
 int main() {
     FASTIO;
     cin >> n;
     cin >> k;
-    dp[0] = n;
     lol = n;
     for(ll i = 1; i <= k; i++) {
-        lol2 += dp[i - 1] % M;
-        lol += lol2 % M;
-        dp[i] = lol % M;
+        last += lol % M;
+        lol += last % M;
     }
-    cout << dp[k] % M;
+    cout << lol % M;
 }
+
 
 \end{lstlisting}
 

@@ -17,63 +17,63 @@
 \contentsline {subsection}{\numberline {3.4}Bài 4: Giáng sinh}{24}{subsection.3.4}%
 \contentsline {section}{\numberline {4}ĐỀ HSG 9 THCS TỈNH THANH HÓA NĂM HỌC 2024-2025}{26}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Bài 1: Diện tích}{26}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Bài 2: Số lớn}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Bài 2: Số lớn}{28}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Bài 3: Hộp số}{29}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Bài 4: Bội số chung nhỏ nhất}{30}{subsection.4.4}%
-\contentsline {section}{\numberline {5}ĐỀ HSG 10 THCS TỈNH THÁI BÌNH NĂM HỌC 2024-2025}{31}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Bài 1: Số đặc biệt}{31}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Bài 2: Vườn cây}{33}{subsection.5.2}%
+\contentsline {section}{\numberline {5}ĐỀ HSG 10 THCS TỈNH THÁI BÌNH NĂM HỌC 2024-2025}{32}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Bài 1: Số đặc biệt}{32}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Bài 2: Vườn cây}{34}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Bài 3: Dãy con thịnh vượng}{35}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Bài 4: Mã mặt hàng}{38}{subsection.5.4}%
 \contentsline {section}{\numberline {6}ĐỀ HSG 9 THCS TỈNH HÀ TĨNH 2024 - 2025}{40}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Bài 1: Số nguyên dương $k$}{40}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Bài 2: Nuôi cá cảnh}{42}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Bài 3: Số nguyên tố}{45}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Bài 4: Dãy con}{46}{subsection.6.4}%
-\contentsline {section}{\numberline {7}ĐỀ HSG 9 THCS TỈNH VĨNH PHÚC 2024 - 2025}{49}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Bài 1: Quân Hậu}{49}{subsection.7.1}%
+\contentsline {subsection}{\numberline {6.2}Bài 2: Nuôi cá cảnh}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Bài 3: Số nguyên tố}{46}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Bài 4: Dãy con}{47}{subsection.6.4}%
+\contentsline {section}{\numberline {7}ĐỀ HSG 9 THCS TỈNH VĨNH PHÚC 2024 - 2025}{50}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Bài 1: Quân Hậu}{50}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Bài 2: Trung vị lớn nhất}{51}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Bài 3: Xâu rút gọn}{52}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Bài 4: Dãy đẹp}{53}{subsection.7.4}%
-\contentsline {section}{\numberline {8}ĐỀ HSG 9 THCS TỈNH HẢI PHÒNG 2024 - 2025}{54}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Bài 1: Tam giác vuông}{54}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Bài 2: Số chính phương}{55}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Bài 3: Mượn sách}{56}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Bài 4: Số đặc biệt}{57}{subsection.8.4}%
+\contentsline {subsection}{\numberline {7.4}Bài 4: Dãy đẹp}{54}{subsection.7.4}%
+\contentsline {section}{\numberline {8}ĐỀ HSG 9 THCS TỈNH HẢI PHÒNG 2024 - 2025}{55}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Bài 1: Tam giác vuông}{55}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Bài 2: Số chính phương}{56}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Bài 3: Mượn sách}{57}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Bài 4: Số đặc biệt}{58}{subsection.8.4}%
 \contentsline {section}{\numberline {9}ĐỀ HSG 9 THCS TP. HỒ CHÍ MINH 2024 - 2025}{58}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Bài 1: Sắp xếp}{58}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}Bài 1: Sắp xếp}{59}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Bài 2: Khu vực}{59}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Bài 3: Giải đấu}{60}{subsection.9.3}%
-\contentsline {section}{\numberline {10}ĐỀ HSG 9 THCS THÀNH PHỐ ĐÀ NẴNG 2024 - 2025}{61}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Bài 1: Kí Tự}{61}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Bài 2: Số tròn chục}{62}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Bài 3: Tổng liên tiếp}{63}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Bài 4: Chiến Binh}{64}{subsection.10.4}%
-\contentsline {section}{\numberline {11}ĐỀ HSG 9 THCS TỈNH QUẢNG NINH 2024 - 2025}{65}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Bài 1: Oẳn tù tì}{65}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Bài 2: Khung tranh}{66}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Bài 3: Dãy số bitonic}{68}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Bài 4: Sửa đường}{69}{subsection.11.4}%
-\contentsline {section}{\numberline {12}ĐỀ HSG 9 THCS TỈNH BẮC NINH 2024 - 2025}{71}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Bài 1: Bánh kem}{71}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Bài 2: Số nguyên tố}{72}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Bài 3: Điểm số}{73}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Bài 4: Số đặc biệt}{74}{subsection.12.4}%
-\contentsline {section}{\numberline {13}ĐỀ HSG 9 THCS TỈNH NINH BÌNH 2024 - 2025}{75}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Bài 1: Đếm số}{75}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Bài 2: Cặp số}{76}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Bài 3: Xâu nguyên tố cùng nhau}{77}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Bài 4: Dãy số}{78}{subsection.13.4}%
-\contentsline {section}{\numberline {14}ĐỀ HSG 9 THCS TP CẦN THƠ 2024 -2025}{79}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Bài 1: Luận văn}{79}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Bài 2: Vị trí}{79}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Bài 3: Gặp nhau}{80}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Bài 4: Đội tuyển}{81}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Bài 5: Đơn hàng}{82}{subsection.14.5}%
-\contentsline {section}{\numberline {15}ĐỀ HSG 9 THCS TP. HÀ NỘI 2024 - 2025}{83}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Bài 1: Cắt hình}{83}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}Bài 2: Mạch DNA}{83}{subsection.15.2}%
-\contentsline {subsection}{\numberline {15.3}Bài 3: Dãy đèn}{84}{subsection.15.3}%
-\contentsline {subsection}{\numberline {15.4}Bài 4: Trò chơi}{85}{subsection.15.4}%
-\contentsline {subsection}{\numberline {15.5}Bài 5: Mua hàng}{87}{subsection.15.5}%
+\contentsline {section}{\numberline {10}ĐỀ HSG 9 THCS THÀNH PHỐ ĐÀ NẴNG 2024 - 2025}{62}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Bài 1: Kí Tự}{62}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Bài 2: Số tròn chục}{63}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Bài 3: Tổng liên tiếp}{64}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Bài 4: Chiến Binh}{66}{subsection.10.4}%
+\contentsline {section}{\numberline {11}ĐỀ HSG 9 THCS TỈNH QUẢNG NINH 2024 - 2025}{67}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Bài 1: Oẳn tù tì}{67}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Bài 2: Khung tranh}{68}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Bài 3: Dãy số bitonic}{70}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Bài 4: Sửa đường}{71}{subsection.11.4}%
+\contentsline {section}{\numberline {12}ĐỀ HSG 9 THCS TỈNH BẮC NINH 2024 - 2025}{73}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Bài 1: Bánh kem}{73}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Bài 2: Số nguyên tố}{74}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Bài 3: Điểm số}{75}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Bài 4: Số đặc biệt}{76}{subsection.12.4}%
+\contentsline {section}{\numberline {13}ĐỀ HSG 9 THCS TỈNH NINH BÌNH 2024 - 2025}{77}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Bài 1: Đếm số}{77}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Bài 2: Cặp số}{78}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Bài 3: Xâu nguyên tố cùng nhau}{79}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Bài 4: Dãy số}{80}{subsection.13.4}%
+\contentsline {section}{\numberline {14}ĐỀ HSG 9 THCS TP CẦN THƠ 2024 -2025}{81}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Bài 1: Luận văn}{81}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Bài 2: Vị trí}{81}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Bài 3: Gặp nhau}{82}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Bài 4: Đội tuyển}{83}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Bài 5: Đơn hàng}{84}{subsection.14.5}%
+\contentsline {section}{\numberline {15}ĐỀ HSG 9 THCS TP. HÀ NỘI 2024 - 2025}{85}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Bài 1: Cắt hình}{85}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Bài 2: Mạch DNA}{85}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Bài 3: Dãy đèn}{86}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Bài 4: Trò chơi}{87}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Bài 5: Mua hàng}{89}{subsection.15.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
